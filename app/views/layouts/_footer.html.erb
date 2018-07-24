@@ -1,6 +1,14 @@
 <div class="footer">
   <div class="left_footer"><%= image_tag "footer_logo.gif", alt: "" %>
     <br />
-    <a href="http://csscreme.com"><%= image_tag "csscreme.gif", alt: "", border: "0" %></a></div>
-  <div class="right_footer"> <a href="#">home</a> <a href="#">about us</a> <a href="#">services</a> <a href="#">privacy policy</a> <a href="#">contact us</a> </div>
+    <%= link_to image_tag("csscreme.gif", alt: "", border: "0"),
+      "http://csscreme.com" %>
+  </div>
+  <div class="right_footer">
+    <%= link_to t("home"), root_path %>
+    <%= link_to t("static_pages.about.about"), about_path %>
+    <%= link_to t("services"), "#" %>
+    <%= link_to t("privacy"), "#" %>
+    <%= link_to t("static_pages.contact.contact"), contact_path %>
+  </div>
 </div>

@@ -1,69 +1,64 @@
 <div class="right_content">
-  <div class="languages_box"> <span class="red">Languages:</span>
-    <%= link_to "En", locale: "en" %>
-      <%= link_to "Vi", locale: "vi" %>
+  <div class="languages_box"> <span class="red"><%= t "laguage" %>:</span>
+    <%= link_to t("en"), locale: "en" %>
+      <%= link_to t("vi"), locale: "vi" %>
   </div>
-  <div class="currency"> <span class="red">Currency: </span> <a href="#">GBP</a> <a href="#">EUR</a> <a href="#" class="selected">USD</a> </div>
   <div class="cart">
-    <div class="title"><span class="title_icon"><%= image_tag "cart.gif", alt: "" %></span>My cart</div>
-    <div class="home_cart_content"> 3 x items | <span class="red">TOTAL: 100$</span> </div>
-    <%= link_to "View cart", cart_path, class: "view_cart" %>
+    <div class="title">
+      <span class="title_icon"><%= image_tag "cart.gif", alt: "" %></span>
+      <%= t "my_cart" %>
+    </div>
+    <div class="home_cart_content"> 3 x items |
+      <span class="red"><%= t "total" %>: 100$</span>
+    </div>
+    <%= link_to t("carts.view_cart.cart"), cart_path, class: "view_cart" %>
   </div>
-  <div class="title"><span class="title_icon"><%= image_tag "bullet3.gif", alt: "" %></span>About Our Shop</div>
+  <div class="title">
+    <span class="title_icon"><%= image_tag "bullet3.gif", alt: "" %></span>
+    <%= t "about" %>
+  </div>
   <div class="about">
     <p>
-      <%= image_tag "about.gif", alt: "", class: "right" %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+      <%= image_tag "about.gif", alt: "", class: "right" %>
+      <%= t "about_us" %>
+    </p>
   </div>
   <div class="right_box">
-    <div class="title"><span class="title_icon"><%= image_tag "bullet4.gif", alt: "" %></span>Promotions</div>
-    <div class="new_prod_box"> <a href="#">product name</a>
-      <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
-        <a href="#">
-          <%= image_tag "thumb2.gif", alt: "", class: "thumb", border: "0" %>
-        </a>
+    <div class="title">
+      <span class="title_icon"><%= image_tag "bullet4.gif", alt: "" %></span>
+      <%= t "promotions" %>
+    </div>
+    <div class="new_prod_box">
+      <%= link_to "product name", "#" %>
+      <div class="new_prod_bg">
+        <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
+        <%= link_to image_tag("thumb2.gif", alt: "", class: "thumb", border: "0"), "#" %>
       </div>
     </div>
-    <div class="new_prod_box"> <a href="#">product name</a>
-      <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
-        <a href="#">
-          <%= image_tag "thumb2.gif", alt: "", class: "thumb", border: "0" %>
-        </a>
+    <div class="new_prod_box">
+      <%= link_to "product name", "#" %>
+      <div class="new_prod_bg">
+        <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
+        <%= link_to image_tag("thumb2.gif", alt: "", class: "thumb", border: "0"), "#" %>
       </div>
     </div>
-    <div class="new_prod_box"> <a href="#">product name</a>
-      <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
-        <a href="#">
-          <%= image_tag "thumb3.gif", alt: "", class: "thumb", border: "0" %>
-        </a>
+    <div class="new_prod_box">
+      <%= link_to "product name", "#" %>
+      <div class="new_prod_bg">
+        <span class="new_icon"><%= image_tag "promo_icon.gif", alt: "" %></span>
+        <%= link_to image_tag("thumb2.gif", alt: "", class: "thumb", border: "0"), "#" %>
       </div>
     </div>
   </div>
   <div class="right_box">
-    <div class="title"><span class="title_icon"><%= image_tag "bullet5.gif", alt: "" %></span>Categories</div>
+    <div class="title">
+      <span class="title_icon"><%= image_tag "bullet5.gif", alt: "" %></span>
+      <%= t "category" %>
+    </div>
     <ul class="list">
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">flower gifts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">hollidays gifts</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">flower gifts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">hollidays gifts</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">flower gifts</a></li>
-      <li><a href="#">specials</a></li>
-    </ul>
-    <div class="title"><span class="title_icon"><%= image_tag "bullet6.gif", alt: "" %></span>Partners</div>
-    <ul class="list">
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">flower gifts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">hollidays gifts</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">flower gifts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">hollidays gifts</a></li>
-      <li><a href="#">accesories</a></li>
+      <% @categories.each do |categories| %>
+      <li><%= link_to categories.name, "#" %></li>
+      <% end %>
     </ul>
   </div>
 </div>

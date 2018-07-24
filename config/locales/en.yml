@@ -1,14 +1,32 @@
 en:
   name_shop: "LiHu Shop"
+  home: "Home"
+  login: "Login"
+  register: "Register"
+  category: "Category Shoes"
+  services: "Services"
+  privacy: "Privacy policy"
+  language: "Language"
+  en: "English"
+  vi: "Vietnamese"
+  my_cart: "My Cart"
+  total: "Total"
+  about: "About Our Shop"
+  about_us: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+  promotions: "Promotions"
+  partners: "Partners"
   static_pages:
     home:
       home: "Shoes Shop"
     about:
       about: "About us"
-    shoes:
-      shoes: "Category"
-    detail:
-      detail: "Detail"
+    contact:
+      contact: "Contact"
   carts:
     view_cart:
       cart: "View cart"
+  shoes:
+    index:
+      shoes: "View shoes"
+    show:
+      detail: "Detail"

@@ -5,8 +5,11 @@ ruby "2.5.1"
 
 gem "bootsnap", ">= 1.1.0", require: false
 gem "coffee-rails", "~> 4.2"
+gem "config"
+gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 gem "figaro"
 gem "jbuilder", "~> 2.5"
+gem "kaminari"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
 gem "rubocop", "0.54.0", require: false

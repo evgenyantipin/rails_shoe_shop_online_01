@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>RailsShoeShopOnline01</title>
+    <title><%= full_title yield :title %></title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <%= render "layouts/shim" %>
   </head>
-
   <body>
-    <%= yield %>
+    <div id="wrap">
+      <%= render "layouts/header" %>
+      <div class="center_content">
+        <% flash.each do |message_type, message| %>
+        <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+        <% end %>
+        <%= yield %>
+        <%= render "layouts/right_content" %>
+      </div>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
+
 </html>

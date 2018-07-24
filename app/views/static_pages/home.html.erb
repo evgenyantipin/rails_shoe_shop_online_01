@@ -1,71 +1,51 @@
 <% provide :title, t("home") %>
-  <div class="left_content">
-    <div class="title"><span class="title_icon"><%= image_tag "bullet1.gif", alt: "" %></span>Featured products</div>
-    <div class="feat_prod_box">
-      <div class="prod_img">
-        <a href="#">
-          <%= image_tag "prod1.gif", alt: "", border: "0" %>
-        </a>
-      </div>
-      <div class="prod_det_box">
-        <div class="box_top"></div>
-        <div class="box_center">
-          <div class="prod_title">Product name</div>
-          <p class="details">Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation.</p>
-          <a href="#" class="more">- more details -</a>
-          <div class="clear"></div>
-        </div>
-        <div class="box_bottom"></div>
-      </div>
-      <div class="clear"></div>
-    </div>
-    <div class="feat_prod_box">
-      <div class="prod_img">
-        <a href="#">
-          <%= image_tag "prod2.gif", alt: "", border: "0" %>
-        </a>
-      </div>
-      <div class="prod_det_box">
-        <div class="box_top"></div>
-        <div class="box_center">
-          <div class="prod_title">Product name</div>
-          <p class="details">Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation.</p>
-          <a href="#" class="more">- more details -</a>
-          <div class="clear"></div>
-        </div>
-        <div class="box_bottom"></div>
-      </div>
-      <div class="clear"></div>
-    </div>
-    <div class="title"><span class="title_icon"><%= image_tag "bullet2.gif", alt: "" %></span>New products</div>
-    <div class="new_products">
-      <div class="new_prod_box"> <a href="#">product name</a>
-        <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "new_icon.gif", alt: "" %></span>
-          <a href="#">
-            <%= image_tag "thumb1.gif", alt: "", class: "thumb", border: "0" %>
-          </a>
-        </div>
-      </div>
-      <div class="new_prod_box"> <a href="#">product name</a>
-        <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "new_icon.gif", alt: "" %></span>
-          <a href="#">
-            <%= image_tag "thumb2.gif", alt: "", class: "thumb", border: "0" %>
-          </a>
-        </div>
-      </div>
-      <div class="new_prod_box"> <a href="#">product name</a>
-        <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "new_icon.gif", alt: "" %></span>
-          <a href="#">
-            <%= image_tag "thumb3.gif", alt: "", class: "thumb", border: "0" %>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="clear"></div>
+<div class="left_content">
+  <div class="title"><span class="title_icon">
+    <%= image_tag "bullet1.gif", alt: "" %></span>
+    <%= t "advance_product" %>
   </div>
+  <div class="feat_prod_box">
+    <% @shoes.each do |shoe| %>
+      <div class="prod_img">
+        <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
+        border: "0"), shoe %>
+      </div>
+      <div class="prod_det_box">
+        <div class="box_top"></div>
+        <div class="box_center">
+          <div class="prod_title">
+            <%= link_to shoe.name, shoe %>
+          </div>
+          <p class="details">
+            <%= link_to shoe.description, shoe %>
+          </p>
+          <a href="#" class="more">- more details -</a>
+          <div class="clear"></div>
+        </div>
+        <div class="box_bottom"></div>
+      </div>
+      <div class="clear"></div>
+    <% end %>
+  </div>
+
+  <div class="title"><span class="title_icon">
+    <%= image_tag "bullet2.gif", alt: "" %></span>
+    <%= t "new_product" %>
+  </div>
+  <div class="new_products">
+    <% @new.each do |shoe| %>
+      <div class="new_prod_box">
+        <div class="prod_title">
+          <%= link_to shoe.name, shoe %>
+        </div>
+        <div class="new_prod_bg"> <span class="new_icon"><%= image_tag "new_icon.gif", alt: "" %></span>
+          <div class="prod_img">
+            <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
+            border: "0"), shoe %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+</div>

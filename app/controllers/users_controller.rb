@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :show_categogies, except: [:destroy]
 
   def index; end
 

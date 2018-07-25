@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_24_023556) do
+ActiveRecord::Schema.define(version: 2018_07_24_105408) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "order_id"
@@ -92,6 +92,14 @@ ActiveRecord::Schema.define(version: 2018_07_24_023556) do
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.boolean "admin", default: false
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "bills", "orders"

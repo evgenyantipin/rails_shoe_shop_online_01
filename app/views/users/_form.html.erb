@@ -1,26 +1,41 @@
 <%= form_for @user do |f| %>
   <%= render "shared/error_messages", object: f.object %>
+  <div class="form_row">
+    <%= f.label :name, class: "contact" %>
+    <%= f.text_field :name, class: "contact_input" %>
+  </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :username, class: "contact" %>
+    <%= f.text_field :username, class: "contact_input" %>
+  </div>
 
-  <%= f.label :username %>
-  <%= f.text_field :username, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :email, class: "contact" %>
+    <%= f.email_field :email, class: "contact_input" %>
+  </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :birth_date, class: "contact" %>
+    <%= f.text_field :birth_date, class: "contact_input" %>
+  </div>
 
-  <%= f.label :birth_date %>
-  <%= f.text_field :birth_date, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :phone, class: "contact" %>
+    <%= f.text_field :phone, class: "contact_input" %>
+  </div>
 
-  <%= f.label :phone %>
-  <%= f.text_field :phone, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :password, class: "contact" %>
+    <%= f.password_field :password, class: "contact_input" %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
+  <div class="form_row">
+    <%= f.label :password_confirmation, class: "contact" %>
+    <%= f.password_field :password_confirmation, class: "contact_input" %>
+  </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
-
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <div class="form_row">
+    <%= f.submit yield(:button_text), class: "register" %>
+  </div>
 <% end %>

@@ -3,5 +3,5 @@ class Shoe < ApplicationRecord
   belongs_to :category
   has_one :order_item
 
-  scope :related, -> (category){where category: category}
+  scope :related, ->(category){where category: category}
 end

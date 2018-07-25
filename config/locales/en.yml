@@ -3,6 +3,7 @@ en:
   home: "Home"
   login: "Login"
   register: "Register"
+  create: "Create new account"
   category: "Category Shoes"
   services: "Services"
   privacy: "Privacy policy"
@@ -20,16 +21,13 @@ en:
   partners: "Partners"
   detail: "Detail"
   price: "PRICE: "
-  color: "COLORS: "
   related: "Related Products"
   not_find: "Not find"
-  static_pages:
-    home:
-      product: "Shoes Shop"
-    about:
-      about: "About us"
-    contact:
-      contact: "Contact"
+  about: "About us"
+  contact: "Contact"
+  lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+  all: "All fields are requierd"
+  send: "Send"
   carts:
     view_cart:
       cart: "View cart"
@@ -61,7 +59,7 @@ en:
   create_user: "Create user suscess"
   new_user: "New user?"
   btn_sign_up_now: "Sign up now!"
-  btn_create_account: "Create my account"
+  btn_create_account: "Create"
   btn_update_account: "Save change"
   profile: "Profile"
   setting: "Setting"
@@ -76,7 +74,7 @@ en:
   account_activated: "Account activated!"
   account_invalid: "Invalid activation link"
   btn_activate_account: "Click on the link below to activate your account"
-  forgot_password: "(Forgot Password)"
+  forgot_password: "Forgot Password"
   email_reset_password: "Email sent with password reset instructions"
   email_not_found: "Email address not found"
   reset_password: "Reset Password"

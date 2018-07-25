@@ -8,15 +8,7 @@
     <%= t "category" %>
   </div>
   <div class="new_products">
-    <% @shoes.each do |shoe| %>
-    <div class="new_prod_box">
-      <%= link_to shoe.name, shoe, class: "element_a" %>
-      <div class="new_prod_bg">
-        <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
-          border: "0"), shoe %>
-      </div>
-    </div>
-    <% end %>
+    <%= render @shoes %>
     <%= paginate @shoes %>
   </div>
   <div class="clear"></div>

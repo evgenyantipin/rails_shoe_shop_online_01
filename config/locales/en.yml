@@ -18,6 +18,11 @@ en:
     Ut enim ad minim veniam, quis nostrud."
   promotions: "Promotions"
   partners: "Partners"
+  detail: "Detail"
+  price: "PRICE: "
+  color: "COLORS: "
+  related: "Related Products"
+  not_find: "Not find"
   static_pages:
     home:
       product: "Shoes Shop"
@@ -89,7 +94,7 @@ en:
   compose_mic: "Compose new micropost..."
   delete: "Delete"
   size_image_error: "should be less than 5MB"
-  static_pages: 
+  static_pages:
     about:
       is_a: "is a"
       status: "one book"

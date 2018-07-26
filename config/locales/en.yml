@@ -89,6 +89,9 @@ en:
   address: "Address: "
   date_participation: "Date of participation: "
   upload: "Upload"
+  search: "Search"
+  result: "Result"
+
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"

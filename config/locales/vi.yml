@@ -92,6 +92,9 @@ vi:
   cf_pass: "Xác nhận mật khẩu"
   date_participation: "Ngày tham gia: "
   upload: "Upload"
+  search: "Tìm kiếm"
+  result: "Result"
+
   time:
     formats:
       default: "Ngày %d/%m/%Y %H:%M:%S %z"

@@ -14,10 +14,10 @@ Category.destroy_all
 10.times do
   Category.create(name: Faker::Dog.name, trademark: Faker::Name.name)
 end
-20.times do
+100.times do
   Shoe.create(name: Faker::Dog.name, quantity: Faker::Number.between(1, 25),
     price: Faker::Commerce.price, description: Faker::Lorem.paragraphs,
-    img_url: Faker::Avatar.image, category_id: Faker::Number.between(1, 4))
+    img_url: Faker::Avatar.image, category_id: Faker::Number.between(1, 10))
 end
 20.times do
   Discount.create!(start_date: Faker::Date.between(10.days.ago, Date.today),

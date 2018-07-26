@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
-  before_action :show_categogies, only: [:home, :about, :contact]
-
-  def home; end
+  def home
+    @shoes = Shoe.limit(Settings.product_shoe).order price: :DESC
+    @new = Shoe.limit(Settings.product_new).order updated_at: :DESC
+  end
 
   def about; end
 

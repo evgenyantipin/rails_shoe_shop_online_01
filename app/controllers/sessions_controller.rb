@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :show_categogies, only: [:new, :create]
   def new; end
 
   def create

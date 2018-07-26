@@ -1,5 +1,4 @@
 class AccountActivationsController < ApplicationController
-  before_action :show_categogies, only: [:edit]
   def edit
     user = User.find_by email: params[:email]
     if user && !user.activated? &&

@@ -11,11 +11,17 @@ User.create!(name: "Example User", email: "example@railstutorial.org",
     activated_at: Time.zone.now)
 end
 Category.destroy_all
-4.times do
-  Category.create(name: Faker::Dog.name)
+10.times do
+  Category.create(name: Faker::Dog.name, trademark: Faker::Name.name)
 end
 20.times do
   Shoe.create(name: Faker::Dog.name, quantity: Faker::Number.between(1, 25),
     price: Faker::Commerce.price, description: Faker::Lorem.paragraphs,
     img_url: Faker::Avatar.image, category_id: Faker::Number.between(1, 4))
+end
+20.times do
+  Discount.create!(start_date: Faker::Date.between(10.days.ago, Date.today),
+    end_date: Faker::Date.between(1.days.ago, Date.today),
+    percent: Faker::Number.between(0, 100),
+    shoe_id: rand(1..20))
 end

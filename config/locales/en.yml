@@ -25,9 +25,34 @@ en:
   not_find: "Not find"
   about: "About us"
   contact: "Contact"
-  lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+  lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud."
   all: "All fields are requierd"
   send: "Send"
+  advance_product: "Advance Product"
+  new_product: "New Product"
+  trademark: "Trademark"
+  static_pages:
+    home:
+      product: "Shoes Shop"
+    about:
+      is_a: "is a"
+      status: "one book"
+      about: "About us"
+      address: "Address"
+      full_name: "Full name"
+    home:
+      status: "is nice"
+      welcome: "Welcome to the Huyen Cherry"
+      product: "Shoes Shop"
+    detail:
+      detail: “Detail”
+    contact:
+      contact: "Contact"
   carts:
     view_cart:
       cart: "View cart"

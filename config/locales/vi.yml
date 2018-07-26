@@ -19,10 +19,16 @@ vi:
   promotions: "Quảng cáo"
   partners: "Đối tác"
   static_pages:
-    home:
-      product: "Shoes Shop"
     about:
+      is_a: "là"
+      status: "một cuốn sách"
+      address: "địa chỉ"
+      full_name: "tên"
       about: "Về chúng tôi"
+    home:
+      status: "tốt"
+      welcome: "Chào mừng đến với Huyền Cherry"
+      product: "Shoes Shop"
     detail:
       detail: "Chi tiết"
     contact:
@@ -91,6 +97,19 @@ vi:
   compose_mic: "Compose new micropost..."
   delete: "Xóa"
   size_image_error: "Phải nhỏ hơn 5MB"
+  about: "Về chúng tôi"
+  contact: "Liên lạc"
+  lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud."
+  all: "Tất cả các trường đều được yêu cầu"
+  send: "Gửi"
+  advance_product: "Sản phẩm cao cấp"
+  new_product: "Sản phẩm mới nhất"
+  trademark: "Thương hiệu"
   static_pages:
     about:
       is_a: "là"

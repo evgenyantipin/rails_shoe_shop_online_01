@@ -5,3 +5,6 @@ pass_min: 6
 per_page: 10
 avatar: 50
 expire_time: 2
+product_promotion: 3
+product_shoe: 3
+product_new: 6

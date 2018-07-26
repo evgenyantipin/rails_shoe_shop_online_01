@@ -3,5 +3,5 @@ class OrderItem < ApplicationRecord
   has_one :shoe
 
   validates :quantity, presence: true,
-    numericality: { only_integer: true, greater_than: 0 }
+    numericality: {only_integer: true, greater_than: Settings.greater_than}
 end

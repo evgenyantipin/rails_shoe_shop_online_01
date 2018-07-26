@@ -1,11 +1,12 @@
 vi:
   name_shop: "LiHu Shop"
   home: "Trang chủ"
+  more: "- Xem thêm -"
   login: "Đăng nhập"
   register: "Đăng ký"
-  category: "Loại giày"
-  services: "Dịch vụ"
-  privacy: "Chính sách bảo mật"
+  create: "Tạo tài khoản mới"
+  all_shoes: "Tất cả giầy"
+  category: "Danh mục giầy"
   language: "Ngôn ngữ"
   en: "Tiếng Anh"
   vi: "Tiếng Việt"
@@ -16,124 +17,110 @@ vi:
     consectetur adipisicing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud."
-  promotions: "Quảng cáo"
-  partners: "Đối tác"
-  static_pages:
-    about:
-      is_a: "là"
-      status: "một cuốn sách"
-      address: "địa chỉ"
-      full_name: "tên"
-      about: "Về chúng tôi"
-    home:
-      status: "tốt"
-      welcome: "Chào mừng đến với Huyền Cherry"
-      product: "Shoes Shop"
-    detail:
-      detail: "Chi tiết"
-    contact:
-      contact: "Liên hệ"
-  carts:
-    view_cart:
-      cart: "Chi tiết"
-  shoes:
-    index:
-      shoes: "Chi tiết sản phẩm"
-    show:
-      detail: "Chi tiết"
-    shoe:
-      shoes: "Chi tiết sản phẩm"
-  app_name: "Huyền Cherry"
-  page_home: "Trang chủ"
-  page_about: "Về chúng tôi"
-  page_contact: "Liên hệ"
-  page_help: "Giúp đỡ"
-  page_signup: "Đăng ký"
-  page_new: "Tin mới"
-  page_login: "Đăng nhập"
-  page_logout: "Đăng xuất"
-  page_edit: "Cập nhật tài khoản"
-  page_product: "Cửa hàng Shoe"
-  name_book: "Ruby on Rails Tutorial"
-  write: "viết bởi"
-  author: "Michael Hartl"
-  submit: "Đăng ký"
-  error: "lỗi"
-  inform_error: "Mẫu đăng ký có"
-  something: "Không tìm thấy"
-  create_user: "Thêm tài khoản thành công"
-  new_user: "Tài khoản mới?"
-  btn_sign_up_now: "Đăng nhập ngay!"
-  btn_create_account: "Thêm tài khoản"
-  btn_update_account: "Lưu thay đổi"
-  profile: "Hồ sơ"
-  setting: "Cài đặt"
-  login_fail: "Email hoặc mật khẩu sai"
-  change: "Thay đổi"
-  all_user: "Người dùng"
-  del_user: "Xóa người dùng"
-  require_login: "Vui lòng đăng nhập"
-  question_before_del_user: "Bạn có chắc chắn muốn xóa"
-  account: "Tài khoản"
-  require_check_email: "Vui lòng kiểm tra email của bạn để 
-    kích hoạt tài khoản của bạn."
-  account_activated: "Kích hoạt tài khoản!"
-  account_invalid: "Tài khoản chưa được kích hoạt"
-  btn_activate_account: "Nhấp vào đường link dưới đây để kích hoạt tài khoản"
-  forgot_password: "(Quên mật khẩu)"
-  email_reset_password: "Email hướng dẫn đặt lại mật khẩu"
-  email_not_found: "Không tìm thấy địa chỉ email"
-  reset_password: "Đặt lại mật khẩu"
-  btn_reset_pass: "Để đặt lại mật khẩu bạn nhấp chuột vào link dưới đây:"
-  expire_link: "Link này sẽ hết hạn sau 2h"
-  update_pass_success: "Mật khẩu đã được đặt lại."
-  pass_expired: "Mật khẩu hết hạn."
-  confirm: "Xác nhận"
-  empty: "Không được để trống"
-  create_micropost: "Tạo Micropost!"
-  my_profile: "Hiển thị thông tin"
-  micropost: "Micropost"
-  post: "Đăng"
-  compose_mic: "Compose new micropost..."
-  delete: "Xóa"
-  size_image_error: "Phải nhỏ hơn 5MB"
+  promotions: "Khuyễn mãi"
+  detail: "Chi tiết"
+  price: "GIÁ: "
+  related: "Sản phẩm liên quan"
+  not_find: "Không tìm thấy"
   about: "Về chúng tôi"
-  contact: "Liên lạc"
+  contact: "Liên hệ"
   lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet,
     consectetur adipisicing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud."
-  all: "Tất cả các trường đều được yêu cầu"
+  all: "Các trường bắt buộc đều phải có"
   send: "Gửi"
-  advance_product: "Sản phẩm cao cấp"
-  new_product: "Sản phẩm mới nhất"
-  trademark: "Thương hiệu"
-  static_pages:
-    about:
-      is_a: "là"
-      status: "một cuốn sách"
-      address: "địa chỉ"
-      full_name: "tên"
-    home:
-      status: "tốt"
-      welcome: "Chào mừng đến với Huyền Cherry"
-  hello: "Hello world"
+  advance_product: "Nổi bật"
+  new_product: "Mới"
+  trademark: "Nhãn hiệu"
+  info: "Thông tin khách hàng"
+  page_logout: "Đăng xuất"
+  page_edit: "Thay đổi thông tin tài khoản"
+  page_product: "Tất cả giầy"
+  error: "lỗi"
+  inform_error: "The form contains"
+  something: "Không tìm thấy"
+  create_user: "Tạo tài khoản thành công"
+  new_user: "Người dùng mới?"
+  btn_sign_up_now: "Tạo tài khoản"
+  btn_create_account: "Tạo"
+  btn_update_account: "Lưu thay đổi"
+  profile: "Hồ sơ"
+  setting: "Cài đặt"
+  login_fail: "Email hoặc mật khẩu không hợp lệ"
+  change: "Thay đổi"
+  all_user: "Tất cả người dùng"
+  del_user: "Xóa người dùng"
+  require_login: "Hãy đăng nhập trước"
+  question_before_del_user: "Bạn chắc khồng?"
+  account: "Tài khoản"
+  require_check_email: "Check email để xác minh tài khoản."
+  account_activated: "Email đã được kích hoạt"
+  account_invalid: "Liên kết kích hoạt không hợp lệ"
+  btn_activate_account: "Nhấp vào liên kết bên dưới để kích hoạt tài khoản"
+  forgot_password: "Quên mật khẩu"
+  email_reset_password: "Check email để xem hướng dẫn"
+  email_not_found: "Không thấy địa chỉ email"
+  reset_password: "Đặt lại mật khẩu"
+  btn_reset_pass: "Để đặt lại mật khẩu click link sau:"
+  expire_link: "Liên kết sẽ hết hạn sau 2 giờ."
+  update_pass_success: "Mật khảu đã được đặt lại"
+  pass_expired: "Hết hạn đặt lại mật khẩu."
+  confirm: "Xác nhận"
+  empty: "Không được để trống"
+  activation_account: "Kích hoạt tài khoản"
+  create_micropost: "Tạo bài đăng mới"
+  my_profile: "Xem hồ sơ"
+  delete: "Xóa"
+  size_image_error: "Ảnh phải nhỏ hơn 5MB"
   views:
     pagination:
-      first: "« đầu"
-      last: "cuối »"
-      previous: "‹ trước đó"
-      next: "sau ›"
+      first: "« Đầu"
+      last: "Cuối »"
+      previous: "‹ Trước"
+      next: "Tiếp ›"
       truncate: "…"
-  helpers:
-    page_entries_info:
-      one_page:
-        display_entries:
-          zero: "Không %{entry_name} tìm thấy"
-          one: "Hiển thị <b>1</b> %{entry_name}"
-          other: "Hiển thị <b>all %{count}</b> %{entry_name}"
-      more_pages:
-        display_entries: "Hiển thị %{entry_name}
-         <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+  name: "Tên: "
+  birthday: "Ngày sinh: "
+  email: "Email: "
+  phone: "Số điện thoại: "
+  username: "Tên tài khoản: "
+  address: "Đại chỉ: "
+  password: "Mật khẩu"
+  cf_pass: "Xác nhận mật khẩu"
+  date_participation: "Ngày tham gia: "
+  upload: "Upload"
+  time:
+    formats:
+      default: "Ngày %d/%m/%Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+
+  inform_error: "Biếu mẫu chứa"
+  users:
+    form:
+      name: "Tên"
+      email: "Email"
+      pasword: "Mật khẩu"
+      Picture: "Ảnh"
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+            email:
+              blank: "Email không được để trống"
+              invalid: "Email không hợp lệ"
+              taken: "Email đã tồn tại"
+            password:
+              blank: "Mật khẩu không được để trống"
+              too_short: "Mật khẩu quá ngấn, tối thiểu 6 kí tự"
+            password_confirmation:
+              confirmation: "Mật khẩu không khớp"
+            picture: "Linh"

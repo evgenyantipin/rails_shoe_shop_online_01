@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_011652) do
     t.boolean "admin", default: false
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "picture"
   end
 
   add_foreign_key "bills", "orders"

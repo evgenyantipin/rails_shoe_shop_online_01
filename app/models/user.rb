@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :card
+  has_one :cart
+  has_many :bill
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :remember_token, :activation_token, :reset_token
   has_secure_password

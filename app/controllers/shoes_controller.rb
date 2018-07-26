@@ -7,7 +7,7 @@ class ShoesController < ApplicationController
     @shoe = Shoe.find_by id: params[:id]
 
     if @shoe
-      @related = Shoe.related(@shoe.category)
+      @related = Shoe.limit(Settings.product_new).related @shoe.category
       return
     else
       flash[:danger] = t "not_find"

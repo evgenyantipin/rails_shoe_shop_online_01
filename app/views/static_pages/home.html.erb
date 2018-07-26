@@ -4,8 +4,8 @@
     <%= image_tag "bullet1.gif", alt: "" %></span>
     <%= t "advance_product" %>
   </div>
-  <div class="feat_prod_box">
-    <% @shoes.each do |shoe| %>
+  <% @shoes.each do |shoe| %>
+    <div class="feat_prod_box">
       <div class="prod_img">
         <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
         border: "0"), shoe %>
@@ -19,14 +19,14 @@
           <p class="details">
             <%= link_to shoe.description, shoe %>
           </p>
-          <a href="#" class="more">- more details -</a>
+          <%= link_to t("more"), shoe, class: "more" %>
           <div class="clear"></div>
         </div>
         <div class="box_bottom"></div>
       </div>
       <div class="clear"></div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="title"><span class="title_icon">
     <%= image_tag "bullet2.gif", alt: "" %></span>

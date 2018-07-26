@@ -49,8 +49,8 @@
       <%= t "category" %>
     </div>
     <ul class="list">
-      <% @categories.each do |categories| %>
-      <li><%= link_to categories.name, "#" %></li>
+      <% @categories.each do |category| %>
+      <li><%= link_to category.name, category %></li>
       <% end %>
     </ul>
   </div>
@@ -61,8 +61,8 @@
       <%= t "trademark" %>
     </div>
     <ul class="list">
-      <% @categories.each do |categories| %>
-      <li><%= link_to categories.trademark, "#" %></li>
+      <% @categories.each do |category| %>
+      <li><%= link_to category.trademark, "#" %></li>
       <% end %>
     </ul>
   </div>

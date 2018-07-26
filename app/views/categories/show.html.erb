@@ -1,0 +1,24 @@
+<% provide :title, @category.name %>
+<div class="left_content">
+  <div class="crumb_nav">
+    <%= link_to t("home"), root_path %>
+    &gt;&gt; <%= @category.name %>
+  </div>
+  <div class="title">
+    <span class="title_icon"><%= image_tag "bullet1.gif" %></span>
+    <%= t "category" %>
+  </div>
+  <div class="new_products">
+    <% @related.each do |related| %>
+      <div class="new_prod_box">
+        <%= link_to related.name, related, class: "element_a" %>
+        <div class="new_prod_bg">
+          <%= link_to image_tag(related.img_url, class: "thumb",
+            border: "0"), related %>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @related %>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,9 +1,11 @@
 en:
   name_shop: "LiHu Shop"
   home: "Home"
+  more: "- More details -"
   login: "Login"
   register: "Register"
   create: "Create new account"
+  all_shoes: "All shoes"
   category: "Category Shoes"
   services: "Services"
   privacy: "Privacy policy"

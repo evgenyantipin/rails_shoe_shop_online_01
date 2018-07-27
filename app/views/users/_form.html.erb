@@ -1,12 +1,12 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {multipart: true} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="form_row">
-    <%= f.label :name, class: "contact" %>
+    <%= f.label :name, t("name"), class: "contact" %>
     <%= f.text_field :name, class: "contact_input" %>
   </div>
 
   <div class="form_row">
-    <%= f.label :username, class: "contact" %>
+    <%= f.label :username, t("username"), class: "contact" %>
     <%= f.text_field :username, class: "contact_input" %>
   </div>
 
@@ -16,23 +16,32 @@
   </div>
 
   <div class="form_row">
-    <%= f.label :birth_date, class: "contact" %>
+    <%= f.label :birth_date, t("birthday"), class: "contact" %>
     <%= f.text_field :birth_date, class: "contact_input" %>
   </div>
 
   <div class="form_row">
-    <%= f.label :phone, class: "contact" %>
+    <%= f.label :phone, t("phone"), class: "contact" %>
     <%= f.text_field :phone, class: "contact_input" %>
   </div>
 
   <div class="form_row">
-    <%= f.label :password, class: "contact" %>
+    <%= f.label :address, t("address"), class: "contact" %>
+    <%= f.text_field :address, class: "contact_input" %>
+  </div>
+
+  <div class="form_row">
+    <%= f.label :password, t("password"), class: "contact" %>
     <%= f.password_field :password, class: "contact_input" %>
   </div>
 
   <div class="form_row">
-    <%= f.label :password_confirmation, class: "contact" %>
+    <%= f.label :password_confirmation, t("cf_pass"), class: "contact" %>
     <%= f.password_field :password_confirmation, class: "contact_input" %>
+  </div>
+
+  <div class="form_row">
+    <%= f.file_field :picture, accept: Settings.accept, class: "contact" %>
   </div>
 
   <div class="form_row">

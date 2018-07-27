@@ -1,12 +1,12 @@
-<% provide :title, t("page_login") %>
+<% provide :title, t("login") %>
   <div class="left_content">
     <div class="title">
       <span class="title_icon"><%= image_tag "bullet1.gif", alt: "" %></span>
-      <%= t "page_login" %>
+      <%= t "login" %>
     </div>
     <div class="feat_prod_box_details">
       <div class="contact_form">
-        <div class="form_subtitle"><%= t "page_login" %></div>
+        <div class="form_subtitle"><%= t "login" %></div>
 
         <%= form_for :session, url: login_path do |f| %>
 
@@ -33,7 +33,7 @@
 
           <div class="form_row">
             <%= link_to t("forgot_password"), new_password_reset_path %>
-            <%= f.submit t("page_login"), class: "register" %>
+            <%= f.submit t("login"), class: "register" %>
           </div>
         <% end %>
       </div>

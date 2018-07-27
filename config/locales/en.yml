@@ -7,8 +7,6 @@ en:
   create: "Create new account"
   all_shoes: "All shoes"
   category: "Category Shoes"
-  services: "Services"
-  privacy: "Privacy policy"
   language: "Language"
   en: "English"
   vi: "Vietnamese"
@@ -20,7 +18,6 @@ en:
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud."
   promotions: "Promotions"
-  partners: "Partners"
   detail: "Detail"
   price: "PRICE: "
   related: "Related Products"
@@ -38,50 +35,11 @@ en:
   advance_product: "Advance Product"
   new_product: "New Product"
   trademark: "Trademark"
-  static_pages:
-    home:
-      product: "Shoes Shop"
-    about:
-      is_a: "is a"
-      status: "one book"
-      about: "About us"
-      address: "Address"
-      full_name: "Full name"
-    home:
-      status: "is nice"
-      welcome: "Welcome to the Huyen Cherry"
-      product: "Shoes Shop"
-    detail:
-      detail: “Detail”
-    contact:
-      contact: "Contact"
-  carts:
-    view_cart:
-      cart: "View cart"
-  shoes:
-    index:
-      shoes: "View shoes"
-    show:
-      detail: "Detail"
-    shoe:
-      shoes: "View shoes"
-  app_name: "Huyen Cherry"
-  page_home: "Home"
-  page_about: "About"
-  page_contact: "Contact"
-  page_help: "Help"
-  page_signup: "Sign up"
-  page_new: "News"
-  page_login: "Log in"
+  info: "User infomation"
   page_logout: "Log out"
   page_edit: "Edit account"
   page_product: "Shoe Shop"
-  name_book: "Ruby on Rails Tutorial"
-  write: "by"
-  author: "Michael Hartl"
-  submit: "Create my account"
   error: "error"
-  inform_error: "The form contains"
   something: "Can not find anything"
   create_user: "Create user suscess"
   new_user: "New user?"
@@ -114,21 +72,8 @@ en:
   activation_account: "Account activation"
   create_micropost: "Micropost created!"
   my_profile: "view my profile"
-  micropost: "Micropost"
-  post: "Post"
-  compose_mic: "Compose new micropost..."
   delete: "Delete"
   size_image_error: "should be less than 5MB"
-  static_pages:
-    about:
-      is_a: "is a"
-      status: "one book"
-      address: "Address"
-      full_name: "Full name"
-    home:
-      status: "is nice"
-      welcome: "Welcome to the Huyen Cherry"
-  hello: "Hello world"
   views:
     pagination:
       first: "« FIRST"
@@ -136,13 +81,42 @@ en:
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
-  helpers:
-    page_entries_info:
-      one_page:
-        display_entries:
-          zero: "No %{entry_name} found"
-          one: "Displaying <b>1</b> %{entry_name}"
-          other: "Displaying <b>all %{count}</b> %{entry_name}"
-      more_pages:
-        display_entries: "Displaying %{entry_name}
-         <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+  name: "Name: "
+  birthday: "Birthday: "
+  email: "Email: "
+  phone: "Phone: "
+  username: "Username: "
+  address: "Address: "
+  date_participation: "Date of participation: "
+  upload: "Upload"
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+
+  inform_error: "The form contains"
+  users:
+    form:
+      name: "Name"
+      email: "Email"
+      pasword: "Pasword"
+      picture: "Picture"
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Name can't be blank"
+            email:
+              blank: "Email can't be blank"
+              invalid: "Email is invalid"
+              taken: "Email has already been taken"
+            password:
+              blank: "Password can't be blank"
+              too_short: "Password is too short (minimum is 6 characters)"
+            password_confirmation:
+              confirmation: "Password doesn't match"

@@ -3,8 +3,9 @@ class User < ApplicationRecord
   has_one :cart
   has_many :bill
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :remember_token, :activation_token, :reset_token
+  mount_uploader :picture, PictureUploader
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   has_secure_password
   validates :name, presence: true, length: {maximum: Settings.name_max}
   validates :email, presence: true, length: {maximum: Settings.email_max},
@@ -14,6 +15,7 @@ class User < ApplicationRecord
     allow_nil: true
   before_save :downcase_email
   before_create :create_activation_digest
+  validate :picture_size
 
   class << self
     def digest string
@@ -74,5 +76,10 @@ class User < ApplicationRecord
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
+  end
+
+  def picture_size
+    return if picture.size <= Settings.product_new.megabytes
+    errors.add :picture, I18n.t("size_image_error")
   end
 end

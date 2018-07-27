@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_24_105408) do
+ActiveRecord::Schema.define(version: 2018_07_27_011652) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "order_id"
@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(version: 2018_07_24_105408) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "quantity"
+    t.string "order_item_type"
+    t.bigint "cart_id"
+    t.bigint "shoe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["shoe_id"], name: "index_cart_items_on_shoe_id"
+  end
+
+  create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,6 +93,7 @@ ActiveRecord::Schema.define(version: 2018_07_24_105408) do
     t.integer "price"
     t.string "description"
     t.string "img_url"
+    t.boolean "active"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,6 +124,9 @@ ActiveRecord::Schema.define(version: 2018_07_24_105408) do
   add_foreign_key "bills", "orders"
   add_foreign_key "bills", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "shoes"
+  add_foreign_key "carts", "users"
   add_foreign_key "discounts", "shoes"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "shoes"

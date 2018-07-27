@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     get "/about", to: "static_pages#about"
     get "/contact", to: "static_pages#contact"
     get "/detail", to: "static_pages#detail"
-    get "/cart", to:"carts#view_cart"
-    get "/payment", to:"carts#payment"
-    get "/bill", to:"carts#bill"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
@@ -17,5 +14,6 @@ Rails.application.routes.draw do
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :shoes
     resources :categories
+    resources :carts
   end
 end

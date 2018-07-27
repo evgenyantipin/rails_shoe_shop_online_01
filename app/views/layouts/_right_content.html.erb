@@ -8,10 +8,6 @@
       <span class="title_icon"><%= image_tag "cart.gif", alt: "" %></span>
       <%= t "my_cart" %>
     </div>
-    <div class="home_cart_content"> 3 x items |
-      <span class="red"><%= t "total" %>: 100$</span>
-    </div>
-    <%= link_to t("carts.view_cart.cart"), cart_path, class: "view_cart" %>
   </div>
   <div class="title">
     <span class="title_icon"><%= image_tag "bullet3.gif", alt: "" %></span>
@@ -49,8 +45,8 @@
       <%= t "category" %>
     </div>
     <ul class="list">
-      <% @categories.each do |category| %>
-      <li><%= link_to category.name, category %></li>
+      <% @categories.each do |categories| %>
+      <li><%= link_to categories.name, "#" %></li>
       <% end %>
     </ul>
   </div>
@@ -61,8 +57,8 @@
       <%= t "trademark" %>
     </div>
     <ul class="list">
-      <% @categories.each do |category| %>
-      <li><%= link_to category.trademark, "#" %></li>
+      <% @categories.each do |categories| %>
+      <li><%= link_to categories.trademark, "#" %></li>
       <% end %>
     </ul>
   </div>

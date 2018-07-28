@@ -10,6 +10,18 @@ body {
   color: #000000;
 }
 
+.search{
+  width: 300px;
+  float: right;
+  padding: 30px;
+  opacity: 0.8;
+
+  .custom{
+    float: left;
+    width: 200px;
+  }
+}
+
 a {
   color: #990000;
 }

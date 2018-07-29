@@ -1,5 +1,5 @@
 User.create!(name: "Example User", email: "example@railstutorial.org",
-  password: "foobar", password_confirmation: "foobar", admin: true,
+  password: "foobar", password_confirmation: "foobar", role: 1,
   activated: true, activated_at: Time.zone.now)
 
 5.times do |n|
@@ -7,7 +7,7 @@ User.create!(name: "Example User", email: "example@railstutorial.org",
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name, email: email, password: password,
-    password_confirmation: password, activated: true,
+    password_confirmation: password, activated: true, role: Faker::Number.between(0,1),
     activated_at: Time.zone.now)
 end
 Category.destroy_all

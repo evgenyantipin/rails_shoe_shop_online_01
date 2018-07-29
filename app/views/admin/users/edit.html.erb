@@ -1,0 +1,37 @@
+<% provide :title, t("user_management") %>
+<h1><%= t("user_management") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user, html: {multipart: true} do |f| %>
+
+      <%= f.label :name, t("name") %>
+      <%= f.email_field :name, class: "form-control" %>
+
+      <%= f.label :username, t("username") %>
+      <%= f.text_field :username, class: "form-control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :birth_date, t("birthday") %>
+      <%= f.text_field :birth_date, class: "form-control" %>
+
+      <%= f.label :phone, t("phone") %>
+      <%= f.text_field :phone, class: "form-control" %>
+
+      <%= f.label :address, t("address") %>
+      <%= f.text_field :address, class: "form-control" %>
+
+      <%= f.label :password, t("password") %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, t("cf_pass") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+
+      <%= f.file_field :picture, accept: Settings.accept, class: "form-control" %>
+
+      <%= f.submit t("page_edit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

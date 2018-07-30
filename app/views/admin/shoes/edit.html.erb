@@ -1,0 +1,28 @@
+<% provide :title, t("shoes_management") %>
+<h1><%= t("shoes_management") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @shoe, html: {multipart: true} do |f| %>
+
+      <%= f.label :name, t("name") %>
+      <%= f.email_field :name, class: "form-control" %>
+
+      <%= f.label :quantity, t("quantity") %>
+      <%= f.text_field :quantity, class: "form-control" %>
+
+      <%= f.label :price %>
+      <%= f.email_field :price, class: "form-control" %>
+
+      <%= f.label :description, t("description") %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :category_id, t("category_id") %>
+      <%= f.password_field :category_id, class: "form-control" %>
+
+      <%= f.file_field :img_url, accept: Settings.accept, class: "form-control" %>
+
+      <%= f.submit t("page_edit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

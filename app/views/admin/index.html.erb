@@ -1,0 +1,12 @@
+<% provide :title, t("admin") %>
+<h1>
+  <span class="title_icon"><%= image_tag "bullet1.gif" %></span>
+  <%= t "admin" %>
+</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <p><%= link_to t("user_management"), admin_users_path, class: "btn btn-primary" %></p>
+    <p><%= link_to t("category_management"), admin_categories_path, class: "btn btn-success" %></p>
+    <p><%= link_to t("shoes_management"), admin_shoes_path, class: "btn btn-info" %></p>
+  </div>
+</div>

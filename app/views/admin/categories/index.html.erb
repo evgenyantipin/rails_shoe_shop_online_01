@@ -1,0 +1,25 @@
+<% provide :title, t("category_management") %>
+<h1><%= t("category_management") %></h1>
+<%= link_to t("add"), "#", class: "btn btn-sm btn-primary" %>
+<table class="table table-stripped">
+  <thead>
+    <th><%= t "id" %></th>
+    <th><%= t "name" %></th>
+    <th><%= t "trademark" %></th>
+    <th><%= t "publisher" %></th>
+    <th><%= t "created_at" %></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= link_to t("page_edit"), "#", class: "btn btn-sm btn-success" %></td>
+      <td><%= link_to t("delete"), "#", class: "btn btn-sm btn-success" %></td>
+    </tr>
+  </tbody>
+</table>

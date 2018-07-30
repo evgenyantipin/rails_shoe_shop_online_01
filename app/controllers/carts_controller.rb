@@ -12,17 +12,23 @@ class CartsController < ApplicationController
     @shoe = Shoe.find_by id: params[:id]
     cart_item = @cart.cart_items.find_by shoe: @shoe
     if params[:shoe][:quantity].to_i <= @shoe.quantity
-      if cart_item
-        cart_item.update quantity:
-          (cart_item.quantity + params[:shoe][:quantity].to_i)
-      else
-        CartItem.create quantity:
-          params[:shoe][:quantity], cart: @cart, shoe: @shoe
-      end
+      update_cart_item cart_item
       @shoe.update quantity: (@shoe.quantity - params[:shoe][:quantity].to_i)
     else
       flash[:danger] = t "out_of_stock"
     end
     redirect_to root_path
+  end
+
+  private
+
+  def update_cart_item cart_item
+    if cart_item
+      cart_item.update quantity:
+        (cart_item.quantity + params[:shoe][:quantity].to_i)
+    else
+      CartItem.create quantity:
+        params[:shoe][:quantity], cart: @cart, shoe: @shoe
+    end
   end
 end

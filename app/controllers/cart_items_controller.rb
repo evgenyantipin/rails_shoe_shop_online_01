@@ -8,13 +8,7 @@ class CartItemsController < ApplicationController
     cart_item = @cart.cart_items.find_by shoe: @shoe
 
     if params[:shoe][:quantity].to_i <= @shoe.quantity
-      if cart_item
-        cart_item.update quantity:
-          cart_item.quantity + params[:shoe][:quantity].to_i
-      else
-        CartItem.create quantity:
-          params[:shoe][:quantity], cart: @cart, shoe: @shoe
-      end
+      create_cart_item cart_item
       @shoe.update quantity: @shoe.quantity - params[:shoe][:quantity].to_i
     else
       @notice = t "out_of_stock"
@@ -47,6 +41,18 @@ class CartItemsController < ApplicationController
     shoe.update quantity: shoe.quantity + cart_item.quantity
     respond_to do |format|
       format.js
+    end
+  end
+
+  private
+
+  def create_cart_item cart_item
+    if cart_item
+      cart_item.update quantity:
+        cart_item.quantity + params[:shoe][:quantity].to_i
+    else
+      CartItem.create quantity:
+        params[:shoe][:quantity], cart: @cart, shoe: @shoe
     end
   end
 end

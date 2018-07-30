@@ -1,8 +1,8 @@
 <% provide :title, t("user_management") %>
 
 <ul class="nav nav-tabs" id="my_tabs">
-  <li class="active"><%= link_to "#user", t("user"), data: {toggle: "tab"} %></li>
-  <li><%= link_to "#admin", t("admin"), data: {toggle: "tab"} %></li>
+  <li class="active"><%= link_to t("user"), "#user", data: {toggle: "tab"} %></li>
+  <li><%= link_to t("admin"), "#admin", data: {toggle: "tab"} %></li>
 </ul>
 
 <div class="tab-content">
@@ -21,27 +21,13 @@
         <th><%= t "date_participation" %></th>
         <th></th>
       </thead>
-      <tbody>
-        <% @users.each do |user| %>
-        <tr>
-          <td><%= user.id %></td>
-          <td><%= image_tag user.picture.url if user.picture? %></td>
-          <td><%= user.name %></td>
-          <td><%= user.birth_date %></td>
-          <td><%= user.email %></td>
-          <td><%= user.phone %></td>
-          <td><%= user.role %></td>
-          <td><%= user.username %></td>
-          <td><%= user.address %></td>
-          <td><%= l(user.created_at, format: :default) %></td>
-          <td><%= link_to t("delete"), admin_user_path(user), method: :delete,
-            data: { confirm: t("question_before_del") },
-            class: "btn btn-sm btn-success" %></td>
-        </tr>
-        <% end %>
+      <tbody id="users">
+        <%= render @users %>
       </tbody>
     </table>
-        <%= paginate @users, theme: "twitter-bootstrap-3", param_name: "user_page" %>
+    <div id="user-paginator">
+      <%= paginate @users, theme: "twitter-bootstrap-3", param_name: "user_page" %>
+    </div>
   </div>
 
   <div id="admin" class="tab-pane fade">
@@ -61,26 +47,12 @@
         <th></th>
         <th></th>
       </thead>
-      <tbody>
-        <% @admins.each do |admin| %>
-        <tr>
-          <td><%= admin.id %></td>
-          <td><%= image_tag admin.picture.url if admin.picture? %></td>
-          <td><%= admin.name %></td>
-          <td><%= admin.birth_date %></td>
-          <td><%= admin.email %></td>
-          <td><%= admin.phone %></td>
-          <td><%= admin.role %></td>
-          <td><%= admin.username %></td>
-          <td><%= admin.address %></td>
-          <td><%= l(admin.created_at, format: :default) %></td>
-          <td><%= link_to t("delete"), admin_user_path(admin), method: :delete,
-            data: { confirm: t("question_before_del") },
-            class: "btn btn-sm btn-success" %></td>
-        </tr>
-        <% end %>
+      <tbody id="admins">
+        <%= render @admins %>
       </tbody>
     </table>
-        <%= paginate @admins, theme: "twitter-bootstrap-3", param_name: "admin_page" %>
+    <div id="admin-paginator">
+      <%= paginate @admins, theme: "twitter-bootstrap-3", param_name: "admin_page" %>
+    </div>
   </div>
 </div>

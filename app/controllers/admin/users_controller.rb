@@ -1,10 +1,12 @@
 class Admin::UsersController < AdminController
   before_action :logged_in_user, only: [:index, :destroy]
-  before_action :load_user, only: [:destroy, :update]
+  before_action :load_user, only: [:destroy]
 
   def index
-    @users = User.user("user").page(params[:user_page]).per Settings.paginates_per
-    @admins = User.user("admin").page(params[:admin_page]).per Settings.paginates_per
+    @users = User.user("user").page(params[:user_page])
+                 .per Settings.per_page
+    @admins = User.user("admin").page(params[:admin_page])
+                  .per Settings.per_page
   end
 
   def new
@@ -36,6 +38,7 @@ class Admin::UsersController < AdminController
 
   def user_params
     params.require(:user).permit(:name, :username, :birth_date, :phone,
-      :email, :address, :password, :password_confirmation, :picture).merge!(role: "admin", activated: "1")
+      :email, :address, :password, :password_confirmation, :picture)
+          .merge!(role: "admin", activated: "1")
   end
 end

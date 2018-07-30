@@ -1,19 +1,27 @@
 class Admin::UsersController < AdminController
-  before_action :logged_in_user, only: [:index, :edit, :destroy]
-  before_action :load_user, only: [:edit]
-  def index; end
+  before_action :logged_in_user, only: [:index, :destroy]
+  before_action :load_user, only: [:destroy, :update]
 
-  def edit; end
-
-  private
-
-  def load_user
-    @user = User.find_by id: params[:id]
-
-    return if @user
-    flash[:danger] = t("something")
-    redirect_to admin_path
+  def index
+    @users = User.user("user").page(params[:user_page]).per Settings.paginates_per
+    @admins = User.user("admin").page(params[:admin_page]).per Settings.paginates_per
   end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save
+      flash[:info] = t("add_success")
+      redirect_to admin_users_url
+    else
+      render :new
+    end
+  end
+
+  def show; end
 
   def destroy
     if @user.destroy
@@ -21,6 +29,13 @@ class Admin::UsersController < AdminController
     else
       flash[:danger] = t("error")
     end
-    redirect_to admin_users_url
+    redirect_back fallback_location: root_path
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :username, :birth_date, :phone,
+      :email, :address, :password, :password_confirmation, :picture).merge!(role: "admin", activated: "1")
   end
 end

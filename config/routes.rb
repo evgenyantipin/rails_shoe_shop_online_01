@@ -17,7 +17,10 @@ Rails.application.routes.draw do
     resources :shoes, only: [:index, :show]
     resources :categories, only: [:index, :show]
     resources :carts
-
+    resources :cart_items
+    resources :orders
+    resources :bills
+    resources :order_items
     namespace :admin do
       resources :users
       resources :categories

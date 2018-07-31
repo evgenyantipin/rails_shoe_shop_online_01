@@ -5,8 +5,7 @@ class Cart < ApplicationRecord
   has_many :shoes, through: :cart_items
 
   def total_price
-    byebug
-    cart_items.sum{|item| item.total_price}
+    cart_items.sum(&:total_price)
   end
 
   def item_size

@@ -47,12 +47,11 @@
           </td>
           <td>
             <div class="col-xs-4">
-              <%= link_to cart_item_path(item), remote: true, method: :patch do %>
-                <div class="new_icon">
-                  <%= number_field_tag :quantity, item.quantity, 
-                    class: "update-product", min: 1, max: 100 %>
-                </div>
-              <% end %>
+              <div class="new_icon">
+                <%= number_field_tag :quantity, item.quantity, 
+                  class: "update-product", id: "update-product-#{item.id}",
+                  data: {id: item.id}, min: 1, max: shoe.quantity + item.quantity %>
+              </div>
             </div>
           </td>
           <td id="total_price_item">
@@ -68,7 +67,7 @@
         <span class="red">
           <%= t "total" %>
         </span></td>
-        <td>
+        <td id="total_price_cart">
           <%= number_to_currency current_user.cart.total_price %>
         </td>
       </tr>

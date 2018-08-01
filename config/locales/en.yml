@@ -165,3 +165,5 @@ en:
   old_pass: "Old Password"
   input: "Input User's password"
   add_to_cart: "Add to Cart"
+  loggined: "You are loggined!"
+  status: "Status"

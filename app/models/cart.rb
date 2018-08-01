@@ -13,6 +13,6 @@ class Cart < ApplicationRecord
   end
 
   def get_shoe item
-    shoe = Shoe.find_by id: item.shoe_id
+    Shoe.find_by id: item.shoe_id
   end
 end

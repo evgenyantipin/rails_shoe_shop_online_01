@@ -1,9 +1,10 @@
 //= require rails-ujs
-//= require jquery
-//= require bootstrap
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
 //= require java
 //= require prototype
 //= require scriptaculous

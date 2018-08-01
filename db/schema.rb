@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_101851) do
+ActiveRecord::Schema.define(version: 2018_08_02_035304) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "order_id"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2018_08_01_101851) do
 
   create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quantity"
-    t.string "order_item_type"
     t.bigint "cart_id"
     t.bigint "shoe_id"
     t.datetime "created_at", null: false
@@ -55,7 +54,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_101851) do
     t.string "publisher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "active"
+    t.integer "status"
   end
 
   create_table "discounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -117,7 +116,6 @@ ActiveRecord::Schema.define(version: 2018_08_01_101851) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
-    t.boolean "admin", default: false
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.string "picture"

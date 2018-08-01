@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
   end
 
   def show_categogies
-    @categories = Category.order :name
+    @categories_in_user = Category.order created_at: :desc
+    @categories_in_admin = Category.order(created_at: :desc).page(params[:page])
+                           .per Settings.paginates_per
   end
 
   def show_promotions
@@ -39,6 +41,14 @@ class ApplicationController < ActionController::Base
 
     return if @user
     flash[:danger] = t("something")
-    redirect_to root_path
+    redirect_back fallback_location: root_path
+  end
+
+  def load_category
+    @category = Category.find_by id: params[:id]
+
+    return if @category
+    flash[:danger] = t("something")
+    redirect_back fallback_location: root_path
   end
 end

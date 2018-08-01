@@ -7,7 +7,7 @@ vi:
   cf_pass: "Xác nhận mật khẩu"
   remember_me: "Nhớ lần đăng nhập này"
   register: "Đăng ký"
-  create: "Tạo tài khoản mới"
+  create: "Tạo mới"
   all_shoes: "Tất cả giầy"
   category: "Danh mục giầy"
   language: "Ngôn ngữ"

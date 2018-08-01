@@ -23,8 +23,6 @@ class Admin::UsersController < AdminController
     end
   end
 
-  def show; end
-
   def destroy
     if @user.destroy
       flash[:success] = t("del_user")

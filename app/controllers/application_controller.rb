@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   def show_categogies
     @categories_in_user = Category.inactive.sort_category
     @categories_in_admin = Category.sort_category.page(params[:page])
-                           .per Settings.paginates_per
+                                   .per Settings.paginates_per
   end
 
   def show_promotions

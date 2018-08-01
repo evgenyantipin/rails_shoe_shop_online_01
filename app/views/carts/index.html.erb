@@ -14,6 +14,7 @@
         <td><%= t "quantity" %></td>
         <td><%= t "total" %></td>
         <td><%= t "select" %></td>
+        <td><%= t "delete" %></td>
       </tr>
       <% @items.each do |item| %>
         <% shoe = Cart.new.get_shoe item %>
@@ -23,58 +24,54 @@
               <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
               border: "0"), shoe %>
               <span class="new_icon">
-                <%=
-                if shoe.discount
+                <%= if shoe.discount
                   shoe.discount.percent
-                end %>
+                  end %>%
               </span>
             </div>
           </td>
           <td>
-            <div class="new_prod_box">
-              <div class="prod_title">
-                <%= link_to shoe.name, shoe %>
-              </div>
-              <div class="col-xs-4">
-                <%= link_to t("delete"), item, method: :delete,
-                  data: { confirm: t("question_before_del_user") },
-                  remote: :true, class: "destroy-product" %>
-              </div>
-            </div>
+            <%= link_to shoe.name, shoe %>
           </td>
           <td>
             <%= shoe.price %>
           </td>
           <td>
-            <div class="col-xs-4">
-              <div class="new_icon">
-                <%= number_field_tag :quantity, item.quantity, 
-                  class: "update-product", id: "update-product-#{item.id}",
-                  data: {id: item.id}, min: 1, max: shoe.quantity + item.quantity %>
-              </div>
-            </div>
+            <%= number_field_tag :quantity, item.quantity,
+              class: "update-product", id: "update-product-#{item.id}",
+              data: {id: item.id}, min: 1, max: shoe.quantity + item.quantity %>
           </td>
           <td id="total_price_item">
             <%= number_to_currency item.total_price %>
           </td>
           <td>
-            <%= check_box_tag "event_ids[]", item.id %>
+            <%= check_box_tag "event_ids[]", item.id, class: "in_put" %>
+          </td>
+          <td>
+            <%= link_to t("delete"), item, method: :delete,
+              data: { confirm: t("delete") },
+              remote: :true, class: "destroy-product" %>
           </td>
         </tr>
       <% end %>
       <tr>
         <td colspan="4" class="cart_total">
-        <span class="red">
-          <%= t "total" %>
-        </span></td>
-        <td id="total_price_cart">
+          <span class="red">
+            <%= t "total" %>
+          </span>
+        </td>
+        <td colspan="3" id="total_price_cart" class="cart_total">
           <%= number_to_currency current_user.cart.total_price %>
         </td>
       </tr>
+      <tr>
+        <td colspan="7">
+          <div class="checkout">
+            <%= f.submit t("checkout"), class: "checkout btn btn-primary" %>
+          </div>
+        </td>
+      </tr>
     </table>
-    <div class="checkout">
-      <%= f.submit t("checkout"), class: "checkout" %>
-    </div>
     <% end %>
     <%= link_to t("continue"), root_path, class:"continue" %>
   </div>

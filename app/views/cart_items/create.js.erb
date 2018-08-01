@@ -1,3 +1,2 @@
-jQuery('#cart-size').html('<%= current_user.cart.item_size %>');
-jQuery('#inform_infor').html('<div style="color:red"><p><%= @notice %></p></div>').css({'background-color':'#88ff88'});
-jQuery('#inform_infor').show().delay(4000).slideUp(1000);
+jQuery('#cart-size').html(' <%= current_user.cart.item_size %> x items | <span class="red">TOTAL: <%= current_user.cart.total_price %> $</span>');
+jQuery('.alert').html('<%= @notice %>').css({'display':'block'});

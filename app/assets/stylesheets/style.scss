@@ -244,7 +244,7 @@ img.right {
 }
 
 .prod_det_box {
-  width: 295px;
+  width: 290px;
   float: left;
   padding: 0 0 0 15px;
   position: relative;
@@ -652,4 +652,23 @@ img.cart_thumb {
   img {
     max-width: 100%;
   }
+}
+
+tr {
+
+  td {
+    border-top: 1px solid #ddd;
+  }
+
+  .cart_total {
+    border-top: 2px solid #ddd;
+  }
+}
+
+#event_ids_ {
+  margin: 0;
+}
+
+.update-product{
+  margin-bottom: 0;
 }

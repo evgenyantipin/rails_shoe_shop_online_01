@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :card
-  has_one :cart
+  has_one :cart, dependent: :destroy
   has_many :bill
   enum role: [:user, :admin, :employee]
   attr_accessor :remember_token, :activation_token, :reset_token
@@ -14,6 +14,7 @@ class User < ApplicationRecord
     allow_nil: true
   before_save :downcase_email
   before_create :create_activation_digest
+  after_create :create_cart
   validate :picture_size
 
   scope :user, ->(user){where role: user}

@@ -1,4 +1,5 @@
 class ShoesController < ApplicationController
+  before_action :load_shoe, only: :show
   def index
     @shoes = Shoe.page(params[:page]).per Settings.paginates_per
   end

@@ -1,8 +1,9 @@
 class Admin::CategoriesController < AdminController
-  before_action :load_user, only: [:edit, :destroy, :update, :show]
-  before_action :load_category, only: [:destroy, :update]
+  before_action :load_category, only: [:destroy, :edit, :update]
 
-  def index; end
+  def index
+    store_location
+  end
 
   def new
     @category = Category.new
@@ -25,7 +26,7 @@ class Admin::CategoriesController < AdminController
   def update
     if @category.update_attributes category_params
       flash[:success] = t("page_edit")
-      redirect_to admin_categories_url
+      redirect_back_or admin_categories_url
     else
       render :edit
     end

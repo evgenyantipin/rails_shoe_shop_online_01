@@ -40,13 +40,4 @@ class SessionsController < ApplicationController
       active_and_redirect user
     end
   end
-
-  def re_login
-    if logged_in?
-      flash[:danger] = t "loggined"
-      redirect_to current_user
-    else
-      render :new
-    end
-  end
 end

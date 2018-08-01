@@ -276,7 +276,7 @@ DEPENDENCIES
   faker!
   figaro
   jbuilder (~> 2.5)
-  jquery-rails
+  jquery-rails (~> 4.3)
   kaminari
   listen (>= 3.0.5, < 3.2)
   mini_magick (= 4.7.0)

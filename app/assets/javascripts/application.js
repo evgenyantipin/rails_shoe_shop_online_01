@@ -1,13 +1,11 @@
 //= require rails-ujs
+//= require jquery3
 //= require activestorage
 //= require turbolinks
-//= require_tree .
-//= require jquery
-//= require jquery_ujs
 //= require bootstrap
 //= require java
 //= require prototype
 //= require scriptaculous
 //= require effects
 //= require lightbox
-//= require pagination
+//= require_tree .

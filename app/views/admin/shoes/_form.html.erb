@@ -1,0 +1,21 @@
+<%= form_for @shoe, url: params_shoe(params[:id]), html: {multipart: true} do |f| %>
+
+  <%= f.label :name, t("name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :quantity, t("quantity") %>
+  <%= f.text_field :quantity, class: "form-control" %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.label :description, t("description") %>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label :category_id, t("category_id") %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+
+  <%= f.file_field :img_url, accept: Settings.accept, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

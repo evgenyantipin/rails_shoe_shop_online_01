@@ -1,6 +1,6 @@
 <% provide :title, t("shoes_management") %>
 <h1><%= t("shoes_management") %></h1>
-<%= link_to t("add"), "#", class: "btn btn-sm btn-primary" %>
+<%= link_to t("add"), new_admin_shoe_path, class: "btn btn-sm btn-primary" %>
 <table class="table table-stripped">
   <thead>
     <th><%= t "id" %></th>
@@ -9,23 +9,28 @@
     <th><%= t "price" %></th>
     <th><%= t "description" %></th>
     <th><%= t "img_url" %></th>
-    <th><%= t "category_id" %></th>
+    <th><%= t "category" %></th>
     <th><%= t "created_at" %></th>
     <th></th>
     <th></th>
   </thead>
   <tbody>
+    <% @shoes.each do |shoe| %>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><%= link_to t("page_edit"), "#", class: "btn btn-sm btn-success" %></td>
-      <td><%= link_to t("delete"), "#", class: "btn btn-sm btn-success" %></td>
+      <td><%= shoe.id %></td>
+      <td><%= shoe.name %></td>
+      <td><%= shoe.quantity %></td>
+      <td><%= shoe.price %></td>
+      <td><%= shoe.description %></td>
+      <td><%= image_tag shoe.img_url if shoe.img_url? %></td>
+      <td><%= shoe.category.name %></td>
+      <td><%= l(shoe.created_at, format: :default) %></td>
+      <td><%= link_to t("page_edit"), edit_admin_shoe_path(shoe),
+        class: "btn btn-sm btn-success" %></td>
+      <td><%= link_to t("delete"), admin_shoe_path(shoe), method: :delete, data: { confirm: t("question_before_del") },
+        class: "btn btn-sm btn-success" %></td>
     </tr>
+    <% end %>
   </tbody>
+  <%= paginate @shoes, theme: "twitter-bootstrap-3" %>
 </table>

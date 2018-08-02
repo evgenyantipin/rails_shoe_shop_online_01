@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   end
 
   def show_categogies
-    @categories_in_user = Category.order created_at: :desc
-    @categories_in_admin = Category.order(created_at: :desc).page(params[:page])
+    @categories_in_user = Category.inactive.sort_category
+    @categories_in_admin = Category.sort_category.page(params[:page])
                            .per Settings.paginates_per
   end
 
@@ -50,5 +50,20 @@ class ApplicationController < ActionController::Base
     return if @category
     flash[:danger] = t("something")
     redirect_back fallback_location: root_path
+  end
+
+  def load_shoe
+    @shoe = Shoe.find_by id: params[:id]
+
+    return if @shoe
+    flash[:danger] = t("something")
+    redirect_back fallback_location: root_path
+  end
+
+  def re_login
+    if logged_in?
+      flash[:danger] = t "loggined"
+      redirect_to current_user
+    end
   end
 end

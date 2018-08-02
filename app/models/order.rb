@@ -5,8 +5,10 @@ class Order < ApplicationRecord
   has_many :shoes, through: :order_items
   validates :address, presence: true
 
+  scope :sorted_order, ->{order created_at: :desc}
+
   def get_status
-    status? ? I18n.t("not_delivery") : I18n.t("delivered")
+    status? ? I18n.t("delivered") : I18n.t("not_delivery")
   end
 
   def get_payment_type

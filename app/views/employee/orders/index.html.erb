@@ -18,7 +18,7 @@
       <td><%= order.address %></td>
       <td><%= order.get_status %></td>
       <td><%= order.get_payment_type %></td>
-      <td><%= order.total_price %></td>
+      <td><%= number_to_currency order.total_price %></td>
       <td><%= l(order.created_at, format: :default) %></td>
       <td><%= link_to t("process"),  edit_employee_order_path(order),
         class: "btn btn-sm btn-success" %></td>

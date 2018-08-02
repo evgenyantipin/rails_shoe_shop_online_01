@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_085030) do
+ActiveRecord::Schema.define(version: 2018_08_01_101851) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "order_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_085030) do
     t.string "publisher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "active"
   end
 
   create_table "discounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

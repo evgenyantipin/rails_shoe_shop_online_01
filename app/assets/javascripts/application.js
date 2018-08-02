@@ -9,3 +9,4 @@
 //= require scriptaculous
 //= require effects
 //= require lightbox
+//= require pagination

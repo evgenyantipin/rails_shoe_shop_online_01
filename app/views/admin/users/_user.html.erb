@@ -1,0 +1,15 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= image_tag user.picture.url if user.picture? %></td>
+  <td><%= user.name %></td>
+  <td><%= user.birth_date %></td>
+  <td><%= user.email %></td>
+  <td><%= user.phone %></td>
+  <td><%= user.role %></td>
+  <td><%= user.username %></td>
+  <td><%= user.address %></td>
+  <td><%= l(user.created_at, format: :default) %></td>
+  <td><%= link_to t("delete"), admin_user_path(user), method: :delete,
+    data: { confirm: t("question_before_del") },
+    class: "btn btn-sm btn-success" %></td>
+</tr>

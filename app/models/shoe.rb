@@ -8,7 +8,7 @@ class Shoe < ApplicationRecord
 
   def get_quantity
     count = quantity
-    return true if count > 0
+    return true if count.positive?
     false
   end
 end

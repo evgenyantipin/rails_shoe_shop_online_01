@@ -9,6 +9,7 @@
       <%= t "my_cart" %>
     </div>
     <% if logged_in? %>
+      (<span id="cart-size"><%= current_user.cart.item_size %></span> items)
     <% end %>
     <%= link_to t("view_cart"), carts_path, class: "btn btn-link" %>
   </div>

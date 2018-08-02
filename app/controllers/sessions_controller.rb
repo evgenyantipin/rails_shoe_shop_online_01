@@ -37,7 +37,24 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
       redirect_back_or admin_url
     else
+      check_employee user
+    end
+  end
+
+  def check_employee user
+    if user.employee?
+      log_in user
+      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
+      redirect_back_or employee_orders_url
+    else
       active_and_redirect user
+    end
+  end
+
+  def re_login
+    if logged_in?
+      flash[:danger] = t "loggined"
+      redirect_to current_user
     end
   end
 end

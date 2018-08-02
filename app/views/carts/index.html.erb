@@ -5,7 +5,7 @@
     <%= t "my_cart" %>
   </div>
   <div class="feat_prod_box_details">
-  <%= form_for :item, url: orders_path do |f| %>
+  <%= form_for :item, url: orders_path, method: :get do |f| %>
     <table class="cart_table">
       <tr class="cart_title">
         <td><%= t "item" %></td>

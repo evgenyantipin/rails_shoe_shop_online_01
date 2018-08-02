@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :re_login, only: [:new, :create]
+
   def new; end
 
   def create
@@ -36,6 +38,15 @@ class SessionsController < ApplicationController
       redirect_back_or admin_url
     else
       active_and_redirect user
+    end
+  end
+
+  def re_login
+    if logged_in?
+      flash[:danger] = t "loggined"
+      redirect_to current_user
+    else
+      render :new
     end
   end
 end

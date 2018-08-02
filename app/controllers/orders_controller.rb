@@ -2,13 +2,14 @@ class OrdersController < ApplicationController
   def index
     @user = current_user
     args = params[:event_ids]
-    @items = if args
-      CartItem.where("id IN (?)", args.map(&:to_i)).to_a
-    else
-      current_user.cart.cart_items
-    end
+    @items =
+      if args
+        CartItem.where("id IN (?)", args.map(&:to_i)).to_a
+      else
+        current_user.cart.cart_items
+      end
   end
-  
+
   def create
     @cart = current_user.cart
     payment_type = params[:user][:payment_type] == t("in_person") ? 0 : 1

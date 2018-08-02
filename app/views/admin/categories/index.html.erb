@@ -1,28 +1,31 @@
 <% provide :title, t("category_management") %>
 <h1><%= t("category_management") %></h1>
-<%= link_to t("add"), "#", class: "btn btn-sm btn-primary" %>
+<%= link_to t("add"), new_admin_category_path, class: "btn btn-sm btn-primary" %>
 <table class="table table-stripped">
   <thead>
     <th><%= t "id" %></th>
     <th><%= t "name" %></th>
     <th><%= t "trademark" %></th>
     <th><%= t "publisher" %></th>
+    <th><%= t "status" %></th>
     <th><%= t "created_at" %></th>
     <th></th>
     <th></th>
   </thead>
   <tbody>
-    <% @categories.each do |category| %>
+    <% @categories_in_admin.each do |category| %>
     <tr>
       <td><%= category.id %></td>
       <td><%= category.name %></td>
       <td><%= category.trademark %></td>
       <td><%= category.publisher %></td>
+      <td><%= category.status %></td>
       <td><%= l(category.created_at, format: :default) %></td>
-      <td><%= link_to t("delete"), admin_category_path(category), method: :delete,
-        data: { confirm: t("question_before_del") },
+      <td><%= link_to t("page_edit"), edit_admin_category_path(category),
         class: "btn btn-sm btn-success" %></td>
     </tr>
     <% end %>
   </tbody>
+  <%= paginate @categories_in_admin, theme: "twitter-bootstrap-3",
+    param_name: "admin_page" %>
 </table>

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 60cb01e1dea4332e59acecaec586b3f0dbeb0dcc
+  revision: 9910aa58d92c018abab25d491191576fcc1a7707
   branch: master
   specs:
     faker (1.9.1)
@@ -52,7 +52,7 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.0.0)
+    autoprefixer-rails (9.0.2)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -119,7 +119,7 @@ GEM
       thor (~> 0.14)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (0.9.5)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -249,7 +249,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.16)
+    uglifier (4.1.17)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     web-console (3.6.2)
@@ -276,7 +276,7 @@ DEPENDENCIES
   faker!
   figaro
   jbuilder (~> 2.5)
-  jquery-rails (~> 4.3, >= 4.3.3)
+  jquery-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
   mini_magick (= 4.7.0)

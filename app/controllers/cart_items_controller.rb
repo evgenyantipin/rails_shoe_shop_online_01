@@ -22,7 +22,7 @@ class CartItemsController < ApplicationController
     cart_item = CartItem.find_by id: params[:id]
     @shoe = cart_item.shoe
     count = cart_item.quantity
-    
+
     if params[:cart_item][:quantity].to_i <= @shoe.quantity + count
       cart_item.update quantity: params[:cart_item][:quantity].to_i
       @shoe.update quantity:

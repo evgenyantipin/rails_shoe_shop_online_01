@@ -7,12 +7,12 @@ User.create!(name: "Example User", email: "example@railstutorial.org",
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name, email: email, password: password,
-    password_confirmation: password, activated: true, role: Faker::Number.between(0,1),
-    activated_at: Time.zone.now)
+    password_confirmation: password, activated: true,
+    role: Faker::Number.between(0,1), activated_at: Time.zone.now)
 end
-Category.destroy_all
 10.times do
-  Category.create(name: Faker::Dog.name, trademark: Faker::Name.name)
+  Category.create(name: Faker::Dog.name, trademark: Faker::Name.name,
+    status: Faker::Number.between(0,1))
 end
 200.times do
   Shoe.create(name: Faker::Dog.name, quantity: Faker::Number.between(1, 25),

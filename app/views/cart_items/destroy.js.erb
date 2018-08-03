@@ -3,5 +3,4 @@ jQuery(".destroy-product").bind("ajax:success", function() {
 });
 jQuery('#cart-size').html('<%= current_user.cart.item_size %>');
 jQuery('#total_price_cart').html('<%= number_to_currency(current_user.cart.total_price) %>');
-jQuery('#inform_infor').html('<div style="color:red"><p><%= @notice %></p></div>').css({'background-color':'#88ff88'});
-jQuery('#inform_infor').show().delay(4000).slideUp(1000);
+jQuery('.alert').html('<%= @notice %>').css({'display':'block'});

@@ -55,10 +55,10 @@
           </td>
         </tr>
       </table>
-      <%= link_to t("back"), employee_orders_path, class:"continue" %>
+        <%= f.submit t("create_bill"), class: "checkout btn btn-danger" %>
       </div>
     <div class="clear"></div>
     <div class="form_row">
-      <%= f.submit t("create_bill"), class: "checkout" %>
+      <%= link_to t("back"), employee_orders_path, class: "continue btn btn-success" %>
     </div>
   <% end %>

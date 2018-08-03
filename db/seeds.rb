@@ -2,7 +2,7 @@ User.create!(name: "Example User", email: "example@railstutorial.org",
   password: "123456", password_confirmation: "123456", role: 1,
   activated: true, activated_at: Time.zone.now)
 
-User.create!(name: "Huyen Cherry", email: "example1@railstutorial.org",
+User.create!(name: "Linh Xinh", email: "example1@railstutorial.org",
   password: "123456", password_confirmation: "123456", role: 2,
   activated: true, activated_at: Time.zone.now)
 

@@ -28,5 +28,11 @@
   <%= f.label :picture, t("img_url") %>
   <%= f.file_field :picture, accept: Settings.accept, class: "form-control" %>
 
+  <%= f.label :role, t("role") %>
+  <%= f.label :role, t("admin"), class: "radio-inline"%>
+  <%= f.radio_button :role, :admin, class: "smalled" %>
+  <%= f.label :role, t("employee"), class: "radio-inline"%>
+  <%= f.radio_button :role, :employee, class: "smalled" %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

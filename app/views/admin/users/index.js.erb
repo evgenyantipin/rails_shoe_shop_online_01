@@ -1,4 +1,6 @@
 jQuery("#users").html("<%= j(render(@users)) %>");
 jQuery("#admins").html("<%= j(render(@admins)) %>");
+jQuery("#employees").html("<%= j(render(@employees)) %>");
 jQuery("#user-paginator").html('<%= j(paginate(@users, remote: true, param_name: "user_page", theme: "twitter-bootstrap-3")) %>')
 jQuery("#admin-paginator").html('<%= j(paginate(@admins, remote: true, param_name: "admin_page", theme: "twitter-bootstrap-3")) %>')
+jQuery("#employee-paginator").html('<%= j(paginate(@employees, remote: true, param_name: "employee_page", theme: "twitter-bootstrap-3")) %>')

@@ -25,9 +25,9 @@
     <div class="form_row">
       <%= f.label :payment_type, t("payment_type"), class: "contact" %>
       <%= f.label :payment_type, t("in_person"), class: "radio-inline"%>
-      <%= f.radio_button :payment_type, t("in_person"), class: "smalled", :checked => true %>
+      <%= f.radio_button :payment_type, t("in_person"), class: "smalled", checked: true %>
       <%= f.label :payment_type, t("card"), class: "radio-inline"%>
-      <%= f.radio_button :payment_type, t("card"), class: "smalled", :checked => false %>
+      <%= f.radio_button :payment_type, t("card"), class: "smalled", checked: false %>
     </div>
     <div class="feat_prod_box_details">
     </div>

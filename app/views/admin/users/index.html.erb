@@ -1,8 +1,10 @@
 <% provide :title, t("user_management") %>
+<%= link_to t("add"), new_admin_user_path, class: "btn btn-sm btn-primary" %>
 
 <ul class="nav nav-tabs" id="my_tabs">
   <li class="active"><%= link_to t("user"), "#user", data: {toggle: "tab"} %></li>
   <li><%= link_to t("admin"), "#admin", data: {toggle: "tab"} %></li>
+  <li><%= link_to t("employee"), "#employee", data: {toggle: "tab"} %></li>
 </ul>
 
 <div class="tab-content">
@@ -32,7 +34,6 @@
   </div>
 
   <div id="admin" class="tab-pane fade">
-    <%= link_to t("add"), new_admin_user_path, class: "btn btn-sm btn-primary" %>
     <table class="table table-stripped">
       <thead>
         <th><%= t "id" %></th>
@@ -54,6 +55,31 @@
     </table>
     <div id="admin-paginator">
       <%= paginate @admins, theme: "twitter-bootstrap-3", param_name: "admin_page",
+        remote: true %>
+    </div>
+  </div>
+  <div id="employee" class="tab-pane fade">
+    <table class="table table-stripped">
+      <thead>
+        <th><%= t "id" %></th>
+        <th><%= t "img_url" %></th>
+        <th><%= t "name" %></th>
+        <th><%= t "birthday" %></th>
+        <th><%= t "email" %></th>
+        <th><%= t "phone" %></th>
+        <th><%= t "role" %></th>
+        <th><%= t "username" %></th>
+        <th><%= t "address" %></th>
+        <th><%= t "date_participation" %></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody id="employees">
+        <%= render @employees %>
+      </tbody>
+    </table>
+    <div id="employee-paginator">
+      <%= paginate @employees, theme: "twitter-bootstrap-3", param_name: "employee_page",
         remote: true %>
     </div>
   </div>

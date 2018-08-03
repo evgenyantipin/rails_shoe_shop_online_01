@@ -12,7 +12,7 @@ User.create!(name: "Linh Xinh", email: "example1@railstutorial.org",
   password = "password"
   User.create!(name: name, email: email, password: password,
     password_confirmation: password, activated: true,
-    role: Faker::Number.between(0,1), activated_at: Time.zone.now)
+    role: Faker::Number.between(0,2), activated_at: Time.zone.now)
 end
 10.times do
   Category.create(name: Faker::Dog.name, trademark: Faker::Name.name,

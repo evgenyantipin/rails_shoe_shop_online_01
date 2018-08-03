@@ -7,6 +7,8 @@ class Admin::UsersController < AdminController
                  .per Settings.per_page
     @admins = User.user("admin").page(params[:admin_page])
                   .per Settings.per_page
+    @employees = User.user("employee").page(params[:employee_page])
+                     .per Settings.per_page
   end
 
   def new
@@ -36,7 +38,7 @@ class Admin::UsersController < AdminController
 
   def user_params
     params.require(:user).permit(:name, :username, :birth_date, :phone,
-      :email, :address, :password, :password_confirmation, :picture)
-          .merge!(role: "admin", activated: "1")
+      :email, :address, :password, :password_confirmation, :picture, :role)
+          .merge!(activated: "1")
   end
 end

@@ -25,5 +25,8 @@ Rails.application.routes.draw do
       resources :categories
       resources :shoes
     end
+    namespace :employee do
+      resources :orders
+    end
   end
 end

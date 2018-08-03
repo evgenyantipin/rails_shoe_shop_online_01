@@ -9,6 +9,5 @@ class CartItem < ApplicationRecord
       else
         shoe.price * quantity
       end
-    total = total.to_i + price_shoes
   end
 end

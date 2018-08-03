@@ -12,12 +12,12 @@
         <% @order.order_items.each do |item| %>
           <tr>
             <td>
-              <%= hidden_field_tag "cart_item_ids[]", item.id %>
+              <%= hidden_field_tag "order_id", @order.id %>
               <div class="new_prod_bg">
                 <%= link_to image_tag(item.shoe.img_url, alt: "", class: "thumb",
                 border: "0"), item.shoe %>
                 <span class="new_icon">
-                  <%= 
+                  <%=
                   if item.shoe.discount
                     item.shoe.discount.percent
                   end %>
@@ -27,7 +27,7 @@
             <td>
               <div class="new_prod_box">
                 <div class="prod_title">
-                  <%= link_to item.shoe.name, shoe %>
+                  <%= link_to item.shoe.name, item.shoe %>
                 </div>
               </div>
             </td>
@@ -51,7 +51,7 @@
             </span>
           </td>
           <td>
-            <%= number_to_currency current_user.cart.total_price %>
+            <%= number_to_currency @order.total_price %>
           </td>
         </tr>
       </table>

@@ -171,3 +171,4 @@ vi:
   status_order: "Trạng thái đơn hàng"
   not_delivery: "Chưa giao hàng"
   delivered: "Đã giao hàng"
+  process: "Xử lý đơn hàng"

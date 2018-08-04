@@ -8,9 +8,7 @@ class ShoesController < ApplicationController
     @shoe = Shoe.find_by id: params[:id]
 
     if @shoe
-      if @shoe.quantity.zero?
-        flash.now[:danger] = t "out_of_stock"
-      end
+      flash.now[:danger] = t "out_of_stock" if @shoe.quantity.zero?
       @related = Shoe.limit(Settings.product_new).related @shoe.category
       return
     else

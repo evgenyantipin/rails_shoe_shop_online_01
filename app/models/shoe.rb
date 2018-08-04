@@ -13,7 +13,7 @@ class Shoe < ApplicationRecord
   end
 
   def get_price
-    self.discount ? self.price -
-      self.discount.percent * 0.01 * self.price : self.price
+    discount ? price -
+      discount.percent * 0.01 * price : price
   end
 end

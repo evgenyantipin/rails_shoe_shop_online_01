@@ -2,7 +2,7 @@
 <div class="left_content">
   <div class="title">
     <span class="title_icon"><%= image_tag "bullet5.gif", alt: "" %></span>
-    <%= t "info" %>
+    <%= t "user_infor" %>
   </div>
   <ul class="list">
     <li><strong><%= image_tag @user.picture.url if @user.picture? %></strong></li>
@@ -14,7 +14,7 @@
     <li><strong><%= t "address" %></strong><%= @user.address %></li>
     <li><strong><%= t "date_participation" %></strong><%= l(@user.created_at, format: :default)  %></li>
     <div class="form_row">
-       <%= link_to t("page_edit"), edit_user_path(current_user), class: "contact" %>
+       <%= link_to t("update"), edit_user_path(current_user), class: "contact" %>
     </div>
   </ul>
 </div>

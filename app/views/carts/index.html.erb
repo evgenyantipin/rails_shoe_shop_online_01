@@ -1,15 +1,15 @@
-<% provide :title, t(".cart") %>
+<% provide :title, t("cart") %>
 <div class="left_content">
   <div class="title"><span class="title_icon">
     <%= image_tag "bullet1.gif", alt: "" %></span>
-    <%= t "my_cart" %>
+    <%= t "cart" %>
   </div>
   <div class="feat_prod_box_details">
   <%= form_for :item, url: orders_path, method: :get do |f| %>
     <table class="cart_table">
       <tr class="cart_title">
         <td><%= t "item" %></td>
-        <td><%= t "name_shoe" %></td>
+        <td><%= t "name" %></td>
         <td><%= t "price" %></td>
         <td><%= t "quantity" %></td>
         <td><%= t "total" %></td>
@@ -47,7 +47,7 @@
           </td>
           <td>
             <%= link_to t("delete"), item, method: :delete,
-              data: {confirm: t("delete")},
+              data: {confirm: t("question_before_del")},
               remote: :true, class: "destroy-product" %>
           </td>
         </tr>
@@ -55,7 +55,7 @@
       <tr>
         <td colspan="4" class="cart_total">
           <span class="red">
-            <%= t "total" %>
+            <%= t "total_price" %>
           </span>
         </td>
         <td colspan="3" id="total_price_cart" class="cart_total">
@@ -66,17 +66,17 @@
         <td colspan="7">
           <div class="checkout">
             <% if current_user.cart.item_size.zero? %>
-              <%= f.submit t("checkout"),
+              <%= f.submit t("buy_now"),
                 class: "checkout btn btn-primary", disabled: "disabled" %>
               <% else %>
-              <%= f.submit t("checkout"), class: "checkout btn btn-primary" %>
+              <%= f.submit t("buy_now"), class: "checkout btn btn-primary" %>
             <% end %>
           </div>
         </td>
       </tr>
     </table>
     <% end %>
-    <%= link_to t("continue"), root_path, class: "continue" %>
+    <%= link_to t("continue_shopping"), root_path, class: "continue" %>
   </div>
   <div class="clear"></div>
 </div>

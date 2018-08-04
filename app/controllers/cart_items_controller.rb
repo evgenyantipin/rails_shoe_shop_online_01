@@ -35,7 +35,7 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
-    @notice = t "delete_item"
+    @notice = t "delete_success"
     cart_item = CartItem.find_by id: params[:id]
     @cart_item_id = cart_item.id
     cart_item.destroy

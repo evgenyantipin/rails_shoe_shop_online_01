@@ -1,6 +1,6 @@
 <% provide :title, t("category_management") %>
 <h1><%= t("category_management") %></h1>
-<%= link_to t("add"), new_admin_category_path, class: "btn btn-sm btn-primary" %>
+<%= link_to t("create"), new_admin_category_path, class: "btn btn-sm btn-primary" %>
 <table class="table table-stripped">
   <thead>
     <th><%= t "id" %></th>
@@ -8,7 +8,7 @@
     <th><%= t "trademark" %></th>
     <th><%= t "publisher" %></th>
     <th><%= t "status" %></th>
-    <th><%= t "created_at" %></th>
+    <th><%= t "created_date" %></th>
     <th></th>
     <th></th>
   </thead>
@@ -21,7 +21,7 @@
       <td><%= category.publisher %></td>
       <td><%= category.status %></td>
       <td><%= l(category.created_at, format: :default) %></td>
-      <td><%= link_to t("page_edit"), edit_admin_category_path(category),
+      <td><%= link_to t("update"), edit_admin_category_path(category),
         class: "btn btn-sm btn-success" %></td>
     </tr>
     <% end %>

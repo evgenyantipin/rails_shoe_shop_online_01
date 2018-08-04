@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
     @user = User.find_by id: params[:id]
 
     return if @user
-    flash[:danger] = t("something")
+    flash[:danger] = t("load_fail")
     redirect_back fallback_location: root_path
   end
 
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     @category = Category.find_by id: params[:id]
 
     return if @category
-    flash[:danger] = t("something")
+    flash[:danger] = t("load_fail")
     redirect_back fallback_location: root_path
   end
 
@@ -56,13 +56,13 @@ class ApplicationController < ActionController::Base
     @shoe = Shoe.find_by id: params[:id]
 
     return if @shoe
-    flash[:danger] = t("something")
+    flash[:danger] = t("load_fail")
     redirect_back fallback_location: root_path
   end
 
   def re_login
     if logged_in?
-      flash[:danger] = t "loggined"
+      flash[:danger] = t "logged"
       redirect_to current_user
     end
   end

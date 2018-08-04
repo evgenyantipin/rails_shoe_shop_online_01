@@ -27,9 +27,9 @@ class Admin::UsersController < AdminController
 
   def destroy
     if @user.destroy
-      flash[:success] = t("del_user")
+      flash[:success] = t("delete_success")
     else
-      flash[:danger] = t("error")
+      flash[:danger] = t("delete_fail")
     end
     redirect_back fallback_location: root_path
   end

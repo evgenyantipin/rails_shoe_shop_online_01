@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   has_one :bill
   has_many :order_items
   has_many :shoes, through: :order_items
+  validates :phone, presence: true
   validates :address, presence: true
 
   scope :sorted_order, ->{order created_at: :desc}

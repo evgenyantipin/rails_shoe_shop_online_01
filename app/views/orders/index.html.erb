@@ -4,15 +4,15 @@
     <%= image_tag "bullet1.gif", alt: "" %></span>
     <%= t "infor" %>
   </div>
-  <%= form_for @user, url: orders_path, method: :post do |f| %>
+  <%= form_for @order, url: orders_path do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <div class="form_row">
-      <%= f.label :name, t("name"), class: "contact" %>
-      <%= f.text_field :name, class: "contact_input" %>
+      <%= label_tag :name, t("name"), class: "contact" %>
+      <%= text_field_tag :name, current_user.name, class: "contact_input" %>
     </div>
     <div class="form_row">
-      <%= f.label :email, class: "contact" %>
-      <%= f.email_field :email, class: "contact_input" %>
+      <%= label_tag :email, t("email"), class: "contact" %>
+      <%= email_field_tag :email, current_user.email, class: "contact_input" %>
     </div>
     <div class="form_row">
       <%= f.label :phone, t("phone"), class: "contact" %>

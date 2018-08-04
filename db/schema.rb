@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_035304) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "address"
+    t.string "phone"
     t.boolean "status"
     t.integer "payment_type"
     t.bigint "cart_id"

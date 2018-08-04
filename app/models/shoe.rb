@@ -11,4 +11,9 @@ class Shoe < ApplicationRecord
     return true if count.positive?
     false
   end
+
+  def get_price
+    self.discount ? self.price -
+      self.discount.percent * 0.01 * self.price : self.price
+  end
 end

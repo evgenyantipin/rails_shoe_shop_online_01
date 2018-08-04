@@ -9,6 +9,9 @@
       <div class="prod_img">
         <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
         border: "0"), shoe %>
+        <span class="new_icon">
+          <%= shoe.discount.percent if shoe.discount %>
+        </span>
       </div>
       <div class="prod_det_box">
         <div class="box_top"></div>
@@ -42,6 +45,9 @@
           <div class="prod_img">
             <%= link_to image_tag(shoe.img_url, class: "thumb",
             border: "0"), shoe %>
+            <span class="new_icon">
+              <%= shoe.discount.percent if shoe.discount %>
+            </span>
           </div>
         </div>
       </div>

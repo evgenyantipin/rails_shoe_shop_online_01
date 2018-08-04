@@ -24,9 +24,7 @@
               <%= link_to image_tag(shoe.img_url, alt: "", class: "thumb",
               border: "0"), shoe %>
               <span class="new_icon">
-                <%= if shoe.discount
-                  shoe.discount.percent
-                  end %>%
+                <%= shoe.discount.percent if shoe.discount %>%
               </span>
             </div>
           </td>
@@ -34,7 +32,7 @@
             <%= link_to shoe.name, shoe %>
           </td>
           <td>
-            <%= shoe.price %>
+            <%= number_to_currency shoe.price %>
           </td>
           <td>
             <%= number_field_tag :quantity, item.quantity,
@@ -45,11 +43,11 @@
             <%= number_to_currency item.total_price %>
           </td>
           <td>
-            <%= check_box_tag "event_ids[]", item.id, class: "in_put" %>
+            <%= check_box_tag "cart_item_ids[]", item.id, class: "in_put" %>
           </td>
           <td>
             <%= link_to t("delete"), item, method: :delete,
-              data: { confirm: t("delete") },
+              data: {confirm: t("delete")},
               remote: :true, class: "destroy-product" %>
           </td>
         </tr>
@@ -67,13 +65,18 @@
       <tr>
         <td colspan="7">
           <div class="checkout">
-            <%= f.submit t("checkout"), class: "checkout btn btn-primary" %>
+            <% if current_user.cart.item_size.zero? %>
+              <%= f.submit t("checkout"),
+                class: "checkout btn btn-primary", disabled: "disabled" %>
+              <% else %>
+              <%= f.submit t("checkout"), class: "checkout btn btn-primary" %>
+            <% end %>
           </div>
         </td>
       </tr>
     </table>
     <% end %>
-    <%= link_to t("continue"), root_path, class:"continue" %>
+    <%= link_to t("continue"), root_path, class: "continue" %>
   </div>
   <div class="clear"></div>
 </div>

@@ -4,3 +4,4 @@ jQuery(".destroy-product").bind("ajax:success", function() {
 jQuery('#cart-size').html('<%= current_user.cart.item_size %>');
 jQuery('#total_price_cart').html('<%= number_to_currency(current_user.cart.total_price) %>');
 jQuery('.alert').html('<%= @notice %>').css({'display':'block'});
+jQuery('.checkout').prop('disabled', true);

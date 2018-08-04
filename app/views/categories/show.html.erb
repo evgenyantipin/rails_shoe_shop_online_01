@@ -15,6 +15,9 @@
         <div class="new_prod_bg">
           <%= link_to image_tag(related.img_url, class: "thumb",
             border: "0"), related %>
+          <span class="new_icon">
+            <%= related.discount.percent if related.discount %>
+          </span>
         </div>
       </div>
     <% end %>

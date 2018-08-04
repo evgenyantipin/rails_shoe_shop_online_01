@@ -25,7 +25,7 @@ class Admin::CategoriesController < AdminController
 
   def update
     if @category.update_attributes category_params
-      flash[:success] = t("page_edit")
+      flash[:success] = t("edit_success")
       redirect_back_or admin_categories_url
     else
       render :edit

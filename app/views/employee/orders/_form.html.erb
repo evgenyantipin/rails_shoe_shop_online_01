@@ -1,10 +1,10 @@
-<% provide :title, t(".cart") %>
+<% provide :title, t("orders_management") %>
   <%= form_for @order, url: employee_orders_path, method: :post do |f| %>
     <div class="feat_prod_box_details">
       <table class="cart_table table table-stripped">
         <tr class="cart_title">
           <td><%= t "item" %></td>
-          <td><%= t "name_shoe" %></td>
+          <td><%= t "name" %></td>
           <td><%= t "price" %></td>
           <td><%= t "quantity" %></td>
           <td><%= t "total" %></td>
@@ -47,7 +47,7 @@
         <tr>
           <td colspan="4" class="cart_total">
             <span class="red">
-              <%= t "total" %>
+              <%= t "total_price" %>
             </span>
           </td>
           <td>

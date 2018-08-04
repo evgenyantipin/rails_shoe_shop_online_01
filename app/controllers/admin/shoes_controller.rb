@@ -27,7 +27,7 @@ class Admin::ShoesController < AdminController
 
   def update
     if @shoe.update_attributes shoe_params
-      flash[:success] = t("page_edit")
+      flash[:success] = t("edit_success")
       redirect_back_or admin_shoes_url
     else
       render :edit
@@ -36,9 +36,9 @@ class Admin::ShoesController < AdminController
 
   def destroy
     if @shoe.destroy
-      flash[:success] = t("delete")
+      flash[:success] = t("delete_success")
     else
-      flash[:danger] = t("error")
+      flash[:danger] = t("delete_fail")
     end
     redirect_back fallback_location: root_path
   end

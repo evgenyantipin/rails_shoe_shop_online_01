@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def show_trademark
-    @categories = Category.order :trademark
+    @categories = Category.select(:trademark).distinct
   end
 
   def logged_in_user

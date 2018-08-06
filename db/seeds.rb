@@ -85,7 +85,7 @@ end
   Discount.create!(
     start_date: Faker::Date.between(20.days.ago, Date.today),
     end_date: Faker::Date.between(Date.today, 20.days.from_now),
-    percent: 10,
+    percent: [10, 20, 30, 40, 50, 60, 70].sample,
     shoe_id: rand(1..20)
   )
 end

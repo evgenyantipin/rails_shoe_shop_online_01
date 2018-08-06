@@ -10,3 +10,5 @@ product_shoe: 3
 product_new: 6
 accept: "image/jpeg,image/gif,image/png, image/jpg"
 greater_than: 0
+phone_min: 10
+phone_max: 13

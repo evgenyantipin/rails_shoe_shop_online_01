@@ -152,6 +152,10 @@ vi:
               too_short: "Mật khẩu quá ngấn, tối thiểu 6 kí tự"
             password_confirmation:
               confirmation: "Mật khẩu không khớp"
+            phone:
+              not_a_number: "Số điện thoại phải là số"
+              too_short: "Số điện thoại quá ngấn, tối thiểu 10 kí tự"
+              too_long: "Số điện thoại quá dài, tối đa 13 kí tự"
         order:
           attributes:
             phone:

@@ -16,6 +16,8 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   after_create :create_cart
   validate :picture_size
+  validates :phone, numericality: true,
+    length: {in: Settings.phone_min..Settings.phone_max}
 
   scope :user, ->(user){where role: user}
 

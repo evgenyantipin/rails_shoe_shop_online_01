@@ -152,6 +152,10 @@ en:
               too_short: "Password is too short (minimum is 6 characters)"
             password_confirmation:
               confirmation: "Password doesn't match"
+            phone:
+              not_a_number: "Phone must be number"
+              too_short: "Phone is too short (minimum is 10 characters)"
+              too_long: "Phone is too long (maximum is 13 characters)"
         order:
           attributes:
             phone:

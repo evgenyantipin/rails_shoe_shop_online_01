@@ -120,6 +120,7 @@ en:
   en: "English"
   vi: "Vietnamesse"
   require_all: "All fields are required"
+  btn_create_account: "Create"
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S"

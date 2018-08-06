@@ -120,6 +120,7 @@ vi:
   en: "Tiếng anh"
   vi: "Tiếng việt"
   require_all: "Các trường bắt buộc đều phải có"
+  btn_create_account: "Tạo"
   time:
     formats:
       default: "Ngày %d/%m/%Y %H:%M:%S"

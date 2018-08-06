@@ -272,6 +272,7 @@ img.right {
   float: left;
   text-align: center;
   padding: 10px;
+  position:relative;
 
   .element_a {
     padding: 10px 0 5px 0;
@@ -671,4 +672,20 @@ tr {
 
 .update-product{
   margin-bottom: 0;
+}
+
+.new {
+  left: -1px;
+  height: 20px;
+  padding: 7px 0 0 7px;
+  top: 41px;
+  width: 30px;
+  background: #F00;
+  color: #FFF;
+  display: block;
+  font-family: "league-gothic",sans-serif;
+  font-size: 12px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
 }

@@ -1,5 +1,4 @@
 class CartItemsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :update
   before_action :logged_in_user, only: :create
 
   def create
@@ -29,9 +28,15 @@ class CartItemsController < ApplicationController
       @shoe.update quantity:
         @shoe.quantity + count - params[:cart_item][:quantity].to_i
     end
-    respond_to do |format|
-      format.js
-    end
+
+    price_item = ApplicationController.helpers.number_to_currency(
+      cart_item.total_price
+    )
+    total_price_cart = ApplicationController.helpers.number_to_currency(
+      cart_item.cart.total_price
+    )
+    render json: {status: :success, price: price_item, total_price: total_price_cart}
+    
   end
 
   def destroy

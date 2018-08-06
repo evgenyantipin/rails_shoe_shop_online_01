@@ -123,6 +123,8 @@ vi:
   btn_create_account: "Tạo"
   inform_error: "Biếu mẫu chứa"
   error: "lỗi"
+  must_choose_item: "Bạn phải chọn sản phẩm"
+  order_success: "Đặt hàng thành công"
   time:
     formats:
       default: "Ngày %d/%m/%Y %H:%M:%S"

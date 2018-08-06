@@ -6,7 +6,9 @@ class OrdersController < ApplicationController
       if args
         CartItem.where id: args
       else
-        current_user.cart.cart_items
+        @items = current_user.cart.cart_items
+        flash.now[:info] = t "must_choose_item"
+        render "carts/index"
       end
   end
 

@@ -5,6 +5,7 @@
     <%= t "infor" %>
   </div>
   <%= form_for @order, url: orders_path do |f| %>
+  <div class="contact_form">
     <%= render "shared/error_messages", object: f.object %>
     <div class="form_row">
       <%= label_tag :name, t("name"), class: "contact" %>
@@ -29,6 +30,7 @@
       <%= f.label :payment_type, t("card"), class: "radio-inline"%>
       <%= f.radio_button :payment_type, t("card"), class: "smalled", checked: false %>
     </div>
+  </div>
     <div class="feat_prod_box_details">
     </div>
     <div class="title"><span class="title_icon">

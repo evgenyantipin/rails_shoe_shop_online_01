@@ -152,6 +152,12 @@ vi:
               too_short: "Mật khẩu quá ngấn, tối thiểu 6 kí tự"
             password_confirmation:
               confirmation: "Mật khẩu không khớp"
+        order:
+          attributes:
+            phone:
+              blank: "Số điện thoại không được để trống"
+            address:
+              blank: "Email không được để trống"
   views:
     pagination:
       first: "« Đầu"

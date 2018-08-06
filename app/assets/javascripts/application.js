@@ -1,8 +1,3 @@
-//= require java
-//= require prototype
-//= require scriptaculous
-//= require effects
-//= require lightbox
 //= require rails-ujs
 //= require jquery3
 //= require activestorage

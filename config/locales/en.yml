@@ -152,6 +152,12 @@ en:
               too_short: "Password is too short (minimum is 6 characters)"
             password_confirmation:
               confirmation: "Password doesn't match"
+        order:
+          attributes:
+            phone:
+              blank: "Phone can't be blank"
+            address:
+              blank: "Email can't be blank"
   views:
     pagination:
       first: "« FIRST"

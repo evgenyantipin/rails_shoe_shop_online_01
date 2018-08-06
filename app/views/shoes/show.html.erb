@@ -12,7 +12,9 @@
       <div class="new_prod_bg">
         <%= link_to image_tag(@shoe.img_url, alt: "", class: "thumb",
           border: "0"), @shoe %>
-          <strong class="new"><%= shoe.discount.percent if shoe.discount %>%</strong>
+        <% if @shoe.discount.present? %>
+          <strong class="new"><%= @shoe.discount.percent  %>%</strong>
+        <% end %>
       </div>
       <br />
       <br />
